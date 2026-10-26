@@ -1,0 +1,621 @@
+/* RandomCar — стили интерфейса. Палитра и правила: Docs/ArtDirection.md */
+
+.root {
+    flex-grow: 1;
+    color: rgb(242, 240, 232);
+    font-size: 24px;
+}
+
+.screen {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+}
+
+.screen.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* ---------- текст ---------- */
+
+.title {
+    font-size: 104px;
+    -unity-font-style: bold-and-italic;
+    letter-spacing: 3px;
+    -unity-text-outline-width: 1px;
+    text-shadow: 4px 5px 0 rgba(18, 24, 38, 0.85);
+}
+
+/* Контур того же цвета утолщает буквы: у шрифта темы нет жирного начертания. */
+.title-random { color: rgb(242, 240, 232); -unity-text-outline-color: rgb(242, 240, 232); }
+.title-car { color: rgb(255, 106, 42); -unity-text-outline-color: rgb(255, 106, 42); }
+
+.tagline {
+    font-size: 26px;
+    color: rgb(214, 220, 232);
+    -unity-font-style: italic;
+    text-shadow: 2px 2px 0 rgba(18, 24, 38, 0.8);
+    margin-top: 6px;
+}
+
+.heading {
+    font-size: 52px;
+    -unity-font-style: bold-and-italic;
+    -unity-text-outline-width: 0.5px;
+    -unity-text-outline-color: rgb(242, 240, 232);
+    color: rgb(242, 240, 232);
+    margin-bottom: 18px;
+    text-shadow: 3px 3px 0 rgba(18, 24, 38, 0.8);
+}
+
+.muted {
+    color: rgb(154, 164, 184);
+    font-size: 20px;
+}
+
+.shadowed {
+    text-shadow: 2px 2px 0 rgba(10, 14, 24, 0.85);
+}
+
+/* ---------- заставка ---------- */
+
+.splash {
+    background-color: rgb(14, 19, 31);
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-logo {
+    flex-direction: row;
+    translate: 0 30px;
+    opacity: 0;
+    transition-property: translate, opacity;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out-back;
+}
+
+.splash-logo.shown {
+    translate: 0 0;
+    opacity: 1;
+}
+
+.speed-stripes {
+    flex-direction: row;
+    margin-top: 10px;
+    width: 520px;
+    height: 10px;
+}
+
+.stripe {
+    height: 10px;
+    margin-right: 10px;
+    -unity-background-image-tint-color: white;
+}
+
+.stripe-a { width: 220px; background-color: rgb(255, 106, 42); }
+.stripe-b { width: 120px; background-color: rgb(255, 194, 26); }
+.stripe-c { width: 60px; background-color: rgb(36, 224, 200); }
+
+.skip-hint {
+    position: absolute;
+    bottom: 40px;
+    font-size: 18px;
+    color: rgb(120, 130, 150);
+}
+
+/* ---------- меню ---------- */
+
+.menu {
+    flex-direction: row;
+}
+
+.menu-shade {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 62%;
+    background-image: url("ShadeGradient.png");
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.menu-column {
+    padding-left: 110px;
+    padding-top: 90px;
+    justify-content: flex-start;
+    width: 760px;
+}
+
+.logo-row {
+    flex-direction: row;
+}
+
+.menu-buttons {
+    margin-top: 46px;
+}
+
+.menu-button {
+    width: 470px;
+    height: 66px;
+    margin-bottom: 14px;
+    padding-left: 28px;
+    -unity-text-align: middle-left;
+    font-size: 28px;
+    -unity-font-style: bold-and-italic;
+    -unity-text-outline-width: 0.3px;
+    -unity-text-outline-color: rgb(242, 240, 232);
+    color: rgb(242, 240, 232);
+    background-color: rgba(18, 24, 38, 0.86);
+    border-width: 0;
+    border-left-width: 7px;
+    border-left-color: rgb(255, 106, 42);
+    border-radius: 6px;
+    transition-property: translate, background-color, border-left-width;
+    transition-duration: 0.15s;
+}
+
+.menu-button:hover,
+.menu-button:focus {
+    background-color: rgb(255, 106, 42);
+    border-left-color: rgb(255, 210, 63);
+    border-left-width: 12px;
+    translate: 10px 0;
+    color: rgb(18, 24, 38);
+    -unity-text-outline-color: rgb(18, 24, 38);
+}
+
+.menu-button:active {
+    scale: 0.98 0.98;
+}
+
+.menu-button.secondary {
+    border-left-color: rgb(36, 224, 200);
+}
+
+.choice {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 26px;
+}
+
+.choice-value {
+    font-size: 26px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(255, 210, 63);
+}
+
+.menu-button:hover .choice-value,
+.menu-button:focus .choice-value {
+    color: rgb(18, 24, 38);
+}
+
+.choice-note {
+    font-size: 17px;
+    color: rgb(154, 164, 184);
+    margin-top: -6px;
+    margin-bottom: 12px;
+    margin-left: 4px;
+}
+
+.version {
+    position: absolute;
+    right: 34px;
+    bottom: 26px;
+    font-size: 18px;
+    color: rgba(242, 240, 232, 0.7);
+    text-shadow: 1px 1px 0 rgba(10, 14, 24, 0.8);
+}
+
+.controls-hint {
+    position: absolute;
+    left: 110px;
+    bottom: 34px;
+    font-size: 18px;
+    color: rgba(242, 240, 232, 0.75);
+    text-shadow: 1px 1px 0 rgba(10, 14, 24, 0.8);
+}
+
+/* ---------- панели ---------- */
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.dim {
+    background-color: rgba(10, 14, 24, 0.62);
+}
+
+.panel {
+    background-color: rgba(18, 24, 38, 0.97);
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: rgba(255, 106, 42, 0.55);
+    padding: 40px 54px 40px 54px;
+    min-width: 640px;
+    scale: 0.96 0.96;
+    transition-property: scale;
+    transition-duration: 0.2s;
+}
+
+.panel.shown {
+    scale: 1 1;
+}
+
+.panel .menu-button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.panel .menu-button:hover,
+.panel .menu-button:focus {
+    background-color: rgb(255, 106, 42);
+}
+
+.row {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ---------- таблица лучших ---------- */
+
+.times-row {
+    flex-direction: row;
+    align-items: center;
+    height: 62px;
+    padding-left: 18px;
+    padding-right: 22px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.times-row.first {
+    background-color: rgba(255, 106, 42, 0.22);
+}
+
+.times-row.highlight {
+    border-width: 2px;
+    border-color: rgb(36, 224, 200);
+}
+
+.times-rank {
+    width: 70px;
+    font-size: 30px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(255, 210, 63);
+}
+
+.times-value {
+    flex-grow: 1;
+    font-size: 32px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-right;
+}
+
+.times-empty {
+    font-size: 24px;
+    color: rgb(154, 164, 184);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* ---------- настройки ---------- */
+
+.setting {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 66px;
+    margin-bottom: 10px;
+}
+
+.setting-label {
+    font-size: 26px;
+    -unity-font-style: bold;
+}
+
+.setting Slider {
+    width: 300px;
+}
+
+/* ---------- HUD ---------- */
+
+.hud {
+    padding: 26px 32px 26px 32px;
+}
+
+.hud-card {
+    background-color: rgba(18, 24, 38, 0.72);
+    border-radius: 10px;
+    border-left-width: 6px;
+    border-left-color: rgb(255, 106, 42);
+    padding: 12px 22px 14px 18px;
+}
+
+.hud-label {
+    font-size: 16px;
+    color: rgb(154, 164, 184);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+}
+
+.hud-big {
+    font-size: 42px;
+    -unity-font-style: bold-and-italic;
+    margin-top: -4px;
+}
+
+.hud-mid {
+    font-size: 26px;
+    -unity-font-style: bold;
+}
+
+.hud-top-left {
+    position: absolute;
+    left: 32px;
+    top: 26px;
+    flex-direction: row;
+}
+
+.hud-top-left .hud-card {
+    margin-right: 14px;
+}
+
+.hud-top-right {
+    position: absolute;
+    right: 32px;
+    top: 26px;
+    align-items: flex-end;
+}
+
+.position-big {
+    font-size: 72px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(255, 210, 63);
+    margin-top: -10px;
+}
+
+.standings {
+    margin-top: 10px;
+    background-color: rgba(18, 24, 38, 0.62);
+    border-radius: 10px;
+    padding: 8px 14px 8px 14px;
+    min-width: 230px;
+}
+
+.standing {
+    flex-direction: row;
+    height: 32px;
+    align-items: center;
+}
+
+.standing-pos {
+    width: 34px;
+    font-size: 20px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(154, 164, 184);
+}
+
+.standing-swatch {
+    width: 8px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.standing-name {
+    font-size: 20px;
+}
+
+.standing.me .standing-name {
+    -unity-font-style: bold;
+    color: rgb(255, 210, 63);
+}
+
+.speedo {
+    position: absolute;
+    right: 40px;
+    bottom: 34px;
+    align-items: flex-end;
+}
+
+.speed-value {
+    font-size: 64px;
+    -unity-font-style: bold-and-italic;
+    text-shadow: 3px 3px 0 rgba(10, 14, 24, 0.75);
+}
+
+.speed-unit {
+    font-size: 18px;
+    color: rgb(214, 220, 232);
+    margin-top: -12px;
+    text-shadow: 1px 1px 0 rgba(10, 14, 24, 0.8);
+}
+
+.speed-bar {
+    width: 220px;
+    height: 8px;
+    margin-top: 6px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.speed-fill {
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgb(255, 106, 42);
+}
+
+.speed-fill.boost {
+    background-color: rgb(36, 224, 200);
+}
+
+.countdown {
+    position: absolute;
+    left: 0; right: 0; top: 28%;
+    -unity-text-align: middle-center;
+    font-size: 190px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(242, 240, 232);
+    text-shadow: 6px 7px 0 rgba(18, 24, 38, 0.85);
+    scale: 1 1;
+    transition-property: scale, opacity;
+    transition-duration: 0.18s;
+}
+
+.countdown.pop {
+    scale: 1.35 1.35;
+}
+
+.countdown.go {
+    color: rgb(36, 224, 200);
+}
+
+.banner {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    translate: -50% 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 28px 12px 14px;
+    border-radius: 10px;
+    background-color: rgba(18, 24, 38, 0.9);
+    border-width: 3px;
+    border-color: rgb(255, 74, 28);
+    opacity: 0;
+    transition-property: opacity, translate;
+    transition-duration: 0.2s;
+}
+
+.banner.shown {
+    opacity: 1;
+}
+
+.banner.good {
+    border-color: rgb(36, 224, 200);
+}
+
+.banner-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    background-color: rgb(255, 74, 28);
+    -unity-text-align: middle-center;
+    font-size: 34px;
+    -unity-font-style: bold;
+    color: rgb(18, 24, 38);
+    margin-right: 14px;
+}
+
+.banner.good .banner-icon {
+    background-color: rgb(36, 224, 200);
+}
+
+.banner-text {
+    font-size: 30px;
+    -unity-font-style: bold-and-italic;
+}
+
+.banner-target {
+    font-size: 18px;
+    color: rgb(214, 220, 232);
+}
+
+.banner-progress {
+    position: absolute;
+    left: 10px; right: 10px; bottom: 4px;
+    height: 4px;
+}
+
+.banner-progress-fill {
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgb(255, 74, 28);
+}
+
+.banner.good .banner-progress-fill {
+    background-color: rgb(36, 224, 200);
+}
+
+.lap-toast {
+    position: absolute;
+    top: 150px;
+    left: 32px;
+    padding: 8px 18px 10px 18px;
+    border-radius: 8px;
+    background-color: rgba(36, 224, 200, 0.9);
+    color: rgb(18, 24, 38);
+    font-size: 24px;
+    -unity-font-style: bold-and-italic;
+    opacity: 0;
+    translate: -20px 0;
+    transition-property: opacity, translate;
+    transition-duration: 0.25s;
+}
+
+.lap-toast.shown {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.fps {
+    position: absolute;
+    left: 32px;
+    bottom: 20px;
+    font-size: 16px;
+    color: rgba(242, 240, 232, 0.8);
+}
+
+/* ---------- результаты ---------- */
+
+.result-place {
+    font-size: 92px;
+    -unity-font-style: bold-and-italic;
+    color: rgb(255, 210, 63);
+    margin-top: -10px;
+    text-shadow: 4px 4px 0 rgba(10, 14, 24, 0.8);
+}
+
+.result-grid {
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.result-cell {
+    margin-right: 46px;
+}
+
+.result-lap {
+    font-size: 20px;
+    color: rgb(214, 220, 232);
+    margin-bottom: 2px;
+}
+
+.badge {
+    padding: 6px 14px 8px 14px;
+    border-radius: 8px;
+    background-color: rgb(36, 224, 200);
+    color: rgb(18, 24, 38);
+    font-size: 22px;
+    -unity-font-style: bold-and-italic;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.buttons-row {
+    flex-direction: row;
+}
+
+.buttons-row .menu-button {
+    width: 300px;
+    margin-right: 16px;
+}
