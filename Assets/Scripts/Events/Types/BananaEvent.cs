@@ -21,9 +21,9 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 2.2f;
-            var h = Predict(Target, Definition.WarningSeconds + 0.4f, Radius);
+            var h = Spot(Radius);
             Center = h.Position;
-            yaw = Context.Random.Range(0f, 360f);
+            yaw = RandomRange(0f, 360f);
             banana.gameObject.SetActive(true);
             banana.localScale = Vector3.one * 1.8f;
             puddle.gameObject.SetActive(false);

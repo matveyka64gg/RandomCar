@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28407acfc48fd5c4f8531399a1270bcd, type: 3}
+  m_Name: S_Gravel
+  m_EditorClassIdentifier: RandomCar::RandomCar.Car.SurfaceType
+  DisplayName: "\u0413\u0440\u0430\u0432\u0438\u0439"
+  Kind: 2
+  Grip: 0.62
+  RollingResistance: 0.07
+  Bumpiness: 0.03
+  BumpWavelength: 0.9
+  SkidMarks: 1
+  SkidColor: {r: 0.5411765, g: 0.41568628, b: 0.2627451, a: 0.55}
+  Dusty: 1
+  DustColor: {r: 0.8901961, g: 0.76862746, b: 0.5411765, a: 0.8}

@@ -2670,9 +2670,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9120407925780013174}
-  - {fileID: 21283235251953733}
   - {fileID: 8825531827230399574}
+  - {fileID: 21283235251953733}
+  - {fileID: 669302110239158800}
   - {fileID: 2457564450930148822}
   - {fileID: 4875511629910802792}
   m_Father: {fileID: 0}
@@ -2756,7 +2756,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
   m_PrefabInstance: {fileID: 558769061033428910}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8725878015319017373
+--- !u!1001 &1063816826179556859
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2806,7 +2806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
       propertyPath: m_Name
-      value: Crate_0
+      value: Crate_2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
       propertyPath: m_IsActive
@@ -2817,10 +2817,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
---- !u!4 &9120407925780013174 stripped
+--- !u!4 &669302110239158800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
-  m_PrefabInstance: {fileID: 8725878015319017373}
+  m_PrefabInstance: {fileID: 1063816826179556859}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9074805006011841469
 PrefabInstance:
@@ -2872,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
       propertyPath: m_Name
-      value: Crate_2
+      value: Crate_0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4592ebe10fcb2ec4da73936f9fde9c12, type: 3}
       propertyPath: m_IsActive

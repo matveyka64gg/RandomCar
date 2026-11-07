@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RandomCar.Events
 {
-    /// Трамплин: бирюзовая стрелка на полосе цели, трамплин поднимается из асфальта. Наезд даёт прыжок.
+    /// Трамплин: бирюзовая стрелка на выбранном месте трассы, трамплин поднимается из асфальта. Наезд даёт прыжок.
     public sealed class RampEvent : RaceEvent
     {
         const float Sink = 1.6f;
@@ -20,7 +20,7 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 2.3f;
-            var h = Predict(Target, Definition.WarningSeconds + 0.3f, 2.2f);
+            var h = Spot(2.2f);
             Center = h.Position;
             forward = h.Forward;
             ramp.gameObject.SetActive(true);
@@ -49,7 +49,8 @@ namespace RandomCar.Events
                 if (Mathf.Abs(local.x) > 2.3f || local.z < -3.2f || local.z > 2.8f) continue;
                 if (!racer.Controller.IsGrounded || racer.Controller.Speed < 4f) continue;
                 if (!FirstHit(racer.Controller)) continue;
-                racer.Controller.ApplyImpulse(forward * 2f + Vector3.up * 7.5f);
+                // Трамплин: огромный прыжок вперёд (в «безумии» — с сальто).
+                racer.Controller.ApplyLaunch(forward * 7f + Vector3.up * 22f, racer.Car.right * -3.5f, "трамплин");
                 racer.Controller.ApplyBoost(1.1f);
             }
         }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RandomCar.Events
 {
-    /// Черви: холмики и пыль на полосе цели, затем три червя вылезают из земли.
+    /// Черви: холмики и пыль на выбранном месте трассы, затем три червя вылезают из земли.
     /// Касание подбрасывает и замедляет (не дольше 1.5 с).
     public sealed class WormsEvent : RaceEvent
     {
@@ -32,15 +32,14 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 2.6f;
-            // Чуть впереди цели: черви вылезают у неё перед носом, а не под колёсами.
-            var h = Predict(Target, Definition.WarningSeconds + 0.4f, Radius);
+            var h = Spot(Radius);
             Center = h.Position;
             spots[0] = h.Position - h.Right * 1.3f + h.Forward * 1.5f;
             spots[1] = h.Position - h.Forward * 1.7f;
             spots[2] = h.Position + h.Right * 1.3f + h.Forward * 0.5f;
             for (int i = 0; i < Count; i++)
             {
-                yaw[i] = Context.Random.Range(0f, 360f);
+                yaw[i] = RandomRange(0f, 360f);
                 mounds[i].gameObject.SetActive(true);
                 mounds[i].SetPositionAndRotation(spots[i], Quaternion.Euler(0f, yaw[i], 0f));
                 mounds[i].localScale = Vector3.zero;

@@ -2,7 +2,10 @@
     "name": "RandomCar.Tests",
     "rootNamespace": "RandomCar.Tests",
     "references": [
-        "RandomCar"
+        "RandomCar",
+        "RandomCar.Net",
+        "Unity.Netcode.Runtime",
+        "Unity.Collections"
     ],
     "includePlatforms": [
         "Editor"

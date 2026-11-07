@@ -6,7 +6,8 @@ namespace RandomCar.Events
     public sealed class BallEvent : RaceEvent
     {
         const float BallRadius = 1.5f;
-        const float Start = 11f;
+        /// Мяч выкатывается из-за обочины: столько метров за краем дороги.
+        const float StartBeyondRoad = 5f;
         const float RollTime = 2.4f;
 
         Transform ball;
@@ -28,12 +29,12 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = BallRadius;
-            var h = Predict(Target, Definition.WarningSeconds + RollTime * 0.5f, 1f);
+            var h = Spot(1f);
             axis = h.Axis;
             right = h.Right;
             forward = h.Forward;
-            side = Context.Random.Range(0f, 1f) < 0.5f ? -1f : 1f;
-            Center = axis + right * side * Start;
+            side = RandomRange(0f, 1f) < 0.5f ? -1f : 1f;
+            Center = axis + right * side * (RoadHalf + StartBeyondRoad);
             spin = 0f;
             ball.gameObject.SetActive(true);
             ball.localScale = Vector3.one;
@@ -56,7 +57,7 @@ namespace RandomCar.Events
 
         protected override void OnActiveUpdate(float progress, float time)
         {
-            float travel = Mathf.Lerp(side * Start, -side * Start, time / RollTime);
+            float travel = Mathf.Lerp(side * (RoadHalf + StartBeyondRoad), -side * (RoadHalf + StartBeyondRoad), time / RollTime);
             Vector3 previous = ball.position;
             Center = axis + right * travel;
             ball.position = Center + Vector3.up * Mathf.Abs(Mathf.Sin(time * 5f)) * 0.25f;

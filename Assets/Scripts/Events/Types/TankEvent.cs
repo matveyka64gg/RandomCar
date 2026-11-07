@@ -46,11 +46,11 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 2.6f;
-            var h = Predict(Target, Definition.WarningSeconds + 0.4f, Radius);
+            var h = Spot(Radius);
             Center = h.Position;
             float side = h.Lateral >= 0f ? 1f : -1f;
             var spot = At(h.Progress + 14f / Context.Track.Length, 0f);
-            tankPosition = spot.Axis + spot.Right * side * 25f;
+            tankPosition = Roadside(spot, side, 25f);
             Vector3 look = Center - tankPosition;
             look.y = 0f;
             tank.gameObject.SetActive(true);
@@ -90,7 +90,7 @@ namespace RandomCar.Events
             Play(explosion, Center + Vector3.up * 0.4f);
             Play(smoke, Center);
             crater.gameObject.SetActive(true);
-            crater.SetPositionAndRotation(Center + Vector3.up * 0.02f, Quaternion.Euler(0f, Context.Random.Range(0f, 360f), 0f));
+            crater.SetPositionAndRotation(Center + Vector3.up * 0.02f, Quaternion.Euler(0f, RandomRange(0f, 360f), 0f));
             crater.localScale = Vector3.one * Radius;
             ShakeCameraNear(Center, 0.5f, 50f);
 

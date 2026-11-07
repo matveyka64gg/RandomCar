@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RandomCar.Events
 {
-    /// Бонусные ящики: три ящика опускаются с неба на полосу цели. Касание: буст +25% на 2 с.
+    /// Бонусные ящики: три ящика опускаются с неба на выбранный участок трассы. Касание: буст +25% на 2 с.
     public sealed class CrateEvent : RaceEvent
     {
         const int Count = 3;
@@ -24,11 +24,11 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 2.8f;
-            var h = Predict(Target, Definition.WarningSeconds, Radius);
+            var h = Spot(Radius);
             Center = h.Position;
             for (int i = 0; i < Count; i++)
             {
-                float lateral = Mathf.Clamp(h.Lateral + (i - 1) * 2.1f, -FairnessLimits.RoadHalfWidth + 0.8f, FairnessLimits.RoadHalfWidth - 0.8f);
+                float lateral = Mathf.Clamp(h.Lateral + (i - 1) * 2.1f, -RoadHalf + 0.8f, RoadHalf - 0.8f);
                 spots[i] = At(h.Progress + (i - 1) * 2.5f / Context.Track.Length, lateral).Position;
                 taken[i] = false;
                 crates[i].gameObject.SetActive(true);

@@ -2,15 +2,21 @@ using UnityEngine;
 
 namespace RandomCar.Track
 {
-    /// Трасса в сцене. Геометрия и декор уже сохранены в сцене, здесь только математическая ось для ИИ и счёта кругов.
+    /// Трасса в сцене карты. Геометрия и декор уже сохранены в сцене, здесь — математическая ось для ИИ,
+    /// кругов и событий.
     public sealed class RaceTrack : MonoBehaviour
     {
-        TrackPath path;
+        [SerializeField] TrackDefinition definition;
 
-        public TrackPath Path => path ??= TrackLayout.CreatePath();
+        public TrackDefinition Definition => definition;
+        public TrackPath Path => definition.Path;
+        public float HalfWidth => definition.HalfWidth;
+
+        public void Configure(TrackDefinition trackDefinition) => definition = trackDefinition;
 
         void OnDrawGizmosSelected()
         {
+            if (definition == null) return;
             var p = Path;
             Gizmos.color = Color.cyan;
             for (int i = 0; i < p.Count; i++)

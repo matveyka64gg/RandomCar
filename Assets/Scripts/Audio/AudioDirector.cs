@@ -14,12 +14,9 @@ namespace RandomCar.Audio
 
         AudioSource ui;
         AudioSource sfx;
-        AudioSource engine;
         AudioSource ambience;
         CarController player;
         int lastCount = -1;
-        RaceEvent lastEvent;
-        EventStage lastStage;
         bool wasBoosted;
 
         public static AudioDirector Instance { get; private set; }
@@ -35,9 +32,7 @@ namespace RandomCar.Audio
             Instance = this;
             ui = NewSource("UI", false, 1f);
             sfx = NewSource("Sfx", false, 1f);
-            engine = NewSource("Engine", true, 0f);
-            engine.clip = SoundBank.Engine;
-            ambience = NewSource("Ambience", true, 0.12f);
+            ambience = NewSource("Ambience", true, AmbienceVolume);
             ambience.clip = SoundBank.Crowd;
             ambience.Play();
             ApplyVolume();
@@ -47,13 +42,31 @@ namespace RandomCar.Audio
         void OnDestroy()
         {
             GameSettings.Changed -= ApplyVolume;
-            if (player != null) player.Bumped -= OnBump;
+            if (race != null) race.RacersChanged -= BindPlayer;
+            UnbindPlayer();
         }
 
         void Start()
         {
+            race.RacersChanged += BindPlayer;
+            BindPlayer();
+        }
+
+        void BindPlayer()
+        {
+            UnbindPlayer();
             player = race.Player?.Controller;
-            if (player != null) player.Bumped += OnBump;
+            if (player == null) return;
+            player.Bumped += OnBump;
+            player.Impact += OnImpact;
+        }
+
+        void UnbindPlayer()
+        {
+            if (player == null) return;
+            player.Bumped -= OnBump;
+            player.Impact -= OnImpact;
+            player = null;
         }
 
         AudioSource NewSource(string name, bool loop, float volume)
@@ -68,21 +81,42 @@ namespace RandomCar.Audio
             return source;
         }
 
-        static void ApplyVolume() => AudioListener.volume = GameSettings.Volume;
+        const float AmbienceVolume = 0.12f;
+
+        /// Общая громкость — на слушателе (действует и на музыку), громкость эффектов — на источниках эффектов.
+        void ApplyVolume()
+        {
+            AudioListener.volume = GameSettings.Volume;
+            float sfxVolume = GameSettings.SfxVolume;
+            ui.volume = sfxVolume;
+            sfx.volume = sfxVolume;
+            ambience.volume = AmbienceVolume * sfxVolume;
+        }
 
         public void PlayUiMove() => ui.PlayOneShot(SoundBank.UiMove, 0.8f);
         public void PlayUiClick() => ui.PlayOneShot(SoundBank.UiClick, 0.9f);
 
+        float lastImpact;
+
         void OnBump(float strength)
         {
-            if (strength > 1.5f) sfx.PlayOneShot(SoundBank.Thud, Mathf.Clamp01(strength / 8f));
+            if (strength > 1.5f && Time.time - lastImpact > 0.15f) sfx.PlayOneShot(SoundBank.Thud, Mathf.Clamp01(strength / 8f));
+        }
+
+        /// Удар о стену или машину: металлический лязг, сильнее — громче и глуше.
+        void OnImpact(Vector3 point, float strength)
+        {
+            if (Time.time - lastImpact < 0.12f) return;
+            lastImpact = Time.time;
+            sfx.PlayOneShot(SoundBank.Clank, Mathf.Clamp01(0.25f + strength / 9f));
+            if (strength > 4f) sfx.PlayOneShot(SoundBank.Thud, Mathf.Clamp01(strength / 12f));
         }
 
         void Update()
         {
             if (race == null) return;
             UpdateCountdown();
-            UpdateEngine();
+            UpdateBoost();
             UpdateEvents();
         }
 
@@ -105,71 +139,67 @@ namespace RandomCar.Audio
             }
         }
 
-        void UpdateEngine()
+        /// Рывок от события — отдельный звук, не путать с турбиной двигателя.
+        void UpdateBoost()
         {
-            bool racing = race.Phase == RacePhase.Countdown || race.Phase == RacePhase.Running;
-            if (player == null || !racing)
-            {
-                engine.volume = Mathf.MoveTowards(engine.volume, 0f, Time.unscaledDeltaTime);
-                if (engine.volume <= 0f && engine.isPlaying) engine.Stop();
-                return;
-            }
-            if (!engine.isPlaying) engine.Play();
-            float speed01 = Mathf.Clamp01(Mathf.Abs(player.Speed) / (CarController.MaxSpeed * 1.25f));
-            float throttle = race.Phase == RacePhase.Countdown ? 0.15f : Mathf.Clamp01(player.Throttle);
-            engine.pitch = Mathf.Lerp(engine.pitch, 0.75f + speed01 * 1.35f + throttle * 0.08f, 1f - Mathf.Exp(-8f * Time.deltaTime));
-            engine.volume = Mathf.Lerp(engine.volume, 0.16f + speed01 * 0.12f, 1f - Mathf.Exp(-6f * Time.deltaTime));
-
+            if (player == null) return;
             if (player.IsBoosted && !wasBoosted) sfx.PlayOneShot(SoundBank.Whoosh, 0.7f);
             wasBoosted = player.IsBoosted;
         }
 
+        float lastWarnAt = -10f;
+        readonly System.Collections.Generic.Dictionary<RaceEvent, EventStage> heard = new System.Collections.Generic.Dictionary<RaceEvent, EventStage>();
+        readonly System.Collections.Generic.List<RaceEvent> forget = new System.Collections.Generic.List<RaceEvent>();
+
+        /// Звуки событий: предупреждение — всем (громче, если близко к игроку), удар — с затуханием по расстоянию.
         void UpdateEvents()
         {
-            var ev = director != null ? director.Active : null;
-            if (ev == null)
+            if (director == null) return;
+            foreach (var ev in director.ActiveEvents)
             {
-                lastEvent = null;
-                return;
+                float distance = player != null ? Vector3.Distance(player.transform.position, ev.Center) : 0f;
+                float near = Mathf.Clamp01(1f - distance / 160f);
+                if (!heard.TryGetValue(ev, out var stage))
+                {
+                    heard[ev] = ev.Stage;
+                    // В «Безумии» событий много: сигнал предупреждения не чаще раза в 0.7 с, чтобы не сливался в вой.
+                    if (Time.time - lastWarnAt < 0.7f) continue;
+                    lastWarnAt = Time.time;
+                    sfx.PlayOneShot(ev.Definition.IsGood ? SoundBank.WarnGood : SoundBank.WarnBad, 0.35f + 0.5f * near);
+                    if (ev.Id == "sheep") sfx.PlayOneShot(SoundBank.Bleat, 0.3f + 0.4f * near);
+                    continue;
+                }
+                if (ev.Stage == stage) continue;
+                heard[ev] = ev.Stage;
+                if (ev.Stage != EventStage.Active) continue;
+                switch (ev.Id)
+                {
+                    case "rocket":
+                    case "tank":
+                        sfx.PlayOneShot(SoundBank.Explosion, 0.25f + 0.75f * near);
+                        break;
+                    case "worms":
+                    case "pillars":
+                        sfx.PlayOneShot(SoundBank.Thud, 0.3f + 0.7f * near);
+                        break;
+                    case "wind":
+                    case "tailwind":
+                        sfx.PlayOneShot(SoundBank.Whoosh, 0.3f + 0.6f * near);
+                        break;
+                    case "sheep":
+                        sfx.PlayOneShot(SoundBank.Bleat, 0.2f + 0.5f * near);
+                        break;
+                    case "crate":
+                    case "boostpad":
+                    case "ramp":
+                        sfx.PlayOneShot(SoundBank.Pop, 0.25f + 0.5f * near);
+                        break;
+                }
             }
-            if (ev != lastEvent)
-            {
-                lastEvent = ev;
-                lastStage = ev.Stage;
-                sfx.PlayOneShot(ev.Definition.IsGood ? SoundBank.WarnGood : SoundBank.WarnBad, 0.8f);
-                if (ev.Id == "sheep") sfx.PlayOneShot(SoundBank.Bleat, 0.7f);
-                return;
-            }
-            if (ev.Stage == lastStage) return;
-            lastStage = ev.Stage;
-            if (ev.Stage != EventStage.Active) return;
-
-            // Громче, если событие рядом с игроком.
-            float distance = player != null ? Vector3.Distance(player.transform.position, ev.Center) : 0f;
-            float near = Mathf.Clamp01(1f - distance / 120f);
-            switch (ev.Id)
-            {
-                case "rocket":
-                case "tank":
-                    sfx.PlayOneShot(SoundBank.Explosion, 0.4f + 0.6f * near);
-                    break;
-                case "worms":
-                case "pillars":
-                    sfx.PlayOneShot(SoundBank.Thud, 0.5f + 0.5f * near);
-                    break;
-                case "wind":
-                case "tailwind":
-                    sfx.PlayOneShot(SoundBank.Whoosh, 0.5f + 0.5f * near);
-                    break;
-                case "sheep":
-                    sfx.PlayOneShot(SoundBank.Bleat, 0.6f);
-                    break;
-                case "crate":
-                case "boostpad":
-                case "ramp":
-                    sfx.PlayOneShot(SoundBank.Pop, 0.6f);
-                    break;
-            }
+            // Закончившиеся события забываем, чтобы повторный запуск того же экземпляра снова прозвучал.
+            forget.Clear();
+            foreach (var pair in heard) if (!pair.Key.IsRunning) forget.Add(pair.Key);
+            foreach (var ev in forget) heard.Remove(ev);
         }
     }
 }

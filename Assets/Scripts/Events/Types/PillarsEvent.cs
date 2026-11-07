@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RandomCar.Events
 {
-    /// Каменные столбы: трещины и свечение на половине дороги (где едет цель), затем базальтовые столбы
+    /// Каменные столбы: трещины и свечение на половине дороги, затем базальтовые столбы
     /// перекрывают эту половину на 3 с. Вторая половина всегда свободна. Машины внутри зоны выталкиваются заранее.
     public sealed class PillarsEvent : RaceEvent
     {
@@ -34,11 +34,11 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = FairnessLimits.MaxHazardRadius;
-            // Столбы вырастают впереди цели, чтобы их было видно и было куда отвернуть.
-            var target = Predict(Target, Definition.WarningSeconds + 0.5f, 1f);
+            // Половина дороги — по выбранному месту; вторая половина всегда свободна.
+            var target = Spot(1f);
             nextPush.Clear();
             half = target.Lateral >= 0f ? 1f : -1f;
-            var h = At(target.Progress, half * FairnessLimits.RoadHalfWidth / 2f);
+            var h = At(target.Progress, half * RoadHalf / 2f);
             Center = h.Position;
             right = h.Right;
             var rotation = Quaternion.LookRotation(h.Forward);

@@ -3,10 +3,12 @@
     "rootNamespace": "RandomCar.EditorTools",
     "references": [
         "RandomCar",
+        "RandomCar.Net",
         "Unity.RenderPipelines.Universal.Runtime",
         "Unity.RenderPipelines.Core.Runtime",
         "Unity.InputSystem",
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "Unity.RenderPipelines.Universal.Editor"
     ],
     "includePlatforms": [
         "Editor"

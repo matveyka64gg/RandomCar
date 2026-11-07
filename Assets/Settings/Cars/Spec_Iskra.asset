@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa2c6877d518264f87fd380e3c4a2c8, type: 3}
+  m_Name: Spec_Iskra
+  m_EditorClassIdentifier: RandomCar::RandomCar.Car.CarSpec
+  DisplayName: "\u0418\u0441\u043A\u0440\u0430"
+  Description: "\u041B\u0451\u0433\u043A\u043E\u0435 \u043A\u0443\u043F\u0435 \u0441 \u0437\u0430\u0434\u043D\u0438\u043C \u043F\u0440\u0438\u0432\u043E\u0434\u043E\u043C. \u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0430\u044F \u0431\u044B\u0441\u0442\u0440\u0430\u044F \u0442\u0443\u0440\u0431\u0438\u043D\u0430, \u043E\u0441\u0442\u0440\u044B\u0439 \u0440\u0443\u043B\u044C, \u043E\u0445\u043E\u0442\u043D\u043E \u0438\u0434\u0451\u0442 \u0432 \u0437\u0430\u043D\u043E\u0441."
+  Mass: 1090
+  CenterOfMass: {x: 0, y: 0.36, z: 0.02}
+  InertiaScale: {x: 1.1, y: 1.1, z: 1}
+  Engine:
+    IdleRpm: 1000
+    PeakTorqueRpm: 4900
+    MaxRpm: 8000
+    PeakTorque: 232
+    TorqueAtIdle: 0.5
+    TorqueAtMax: 0.82
+    EngineBraking: 62
+    FreeRevRate: 14000
+    LaunchRpm: 4100
+    Cylinders: 4
+  Gearbox:
+    Ratios:
+    - 3.35
+    - 2.42
+    - 1.88
+    - 1.53
+    - 1.3
+    - 1.16
+    Reverse: 3.2
+    FinalDrive: 3.9
+    Efficiency: 0.9
+    ShiftTime: 0.15
+    UpshiftAt: 0.93
+    DownshiftAt: 0.5
+  Turbo:
+    MaxBoost: 0.7
+    TorquePerBar: 0.55
+    SpoolStartRpm: 2800
+    FullBoostRpm: 4500
+    Lag: 0.32
+    Decay: 0.38
+    BlowOffThreshold: 0.28
+  Drive: 1
+  AwdFrontShare: 0.4
+  Front:
+    LongitudinalGrip: 1.2804
+    LateralGrip: 1.32
+    PeakSlipAngle: 7
+    SlideGrip: 0.7
+    LoadSensitivity: 0.12
+    Travel: 0.22
+    SpringFrequency: 2
+    DampingRatio: 0.42
+    AntiRoll: 0.9
+    BrakeShare: 0.62
+  Rear:
+    LongitudinalGrip: 1.2125001
+    LateralGrip: 1.25
+    PeakSlipAngle: 7.5
+    SlideGrip: 0.7
+    LoadSensitivity: 0.12
+    Travel: 0.22
+    SpringFrequency: 2.1
+    DampingRatio: 0.42
+    AntiRoll: 0.6
+    BrakeShare: 0.38
+  LooseSurfaceGrip: 1
+  BrakeDecel: 1.25
+  HandbrakeForce: 1
+  MaxSteerAngle: 36
+  Drag: 0.62
+  Downforce: 0.9
+  RollingResistance: 0.014
+  TopSpeedKmh: 206
+  SteerSpeed: 270
+  AirLeveling: 5.5
+  AirDamping: 1.4
+  AirSteer: 3
+  KnockResistance: 0.9
+  Bounciness: 0.22
+  BodyFriction: 0.15
+  LandingBounce: 1.15

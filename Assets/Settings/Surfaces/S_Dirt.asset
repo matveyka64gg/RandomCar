@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28407acfc48fd5c4f8531399a1270bcd, type: 3}
+  m_Name: S_Dirt
+  m_EditorClassIdentifier: RandomCar::RandomCar.Car.SurfaceType
+  DisplayName: "\u0413\u0440\u0443\u043D\u0442"
+  Kind: 5
+  Grip: 0.78
+  RollingResistance: 0.03
+  Bumpiness: 0.015
+  BumpWavelength: 1.3
+  SkidMarks: 1
+  SkidColor: {r: 0.43137255, g: 0.30588236, b: 0.2, a: 0.55}
+  Dusty: 1
+  DustColor: {r: 0.7882353, g: 0.63529414, b: 0.4509804, a: 0.7}

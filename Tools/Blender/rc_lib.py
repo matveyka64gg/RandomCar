@@ -57,6 +57,8 @@ def mat(name, color, metallic=0.0, roughness=0.5, emission=None, strength=0.0, a
         bsdf.inputs["Emission Color"].default_value = hex_color(emission)
         bsdf.inputs["Emission Strength"].default_value = strength
     bsdf.inputs["Alpha"].default_value = alpha
+    if alpha < 1.0 and hasattr(m, "surface_render_method"):
+        m.surface_render_method = 'BLENDED'
     m.diffuse_color = hex_color(color, alpha)
     return m
 

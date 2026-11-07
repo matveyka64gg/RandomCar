@@ -12,6 +12,15 @@ namespace RandomCar.Save
 
         public static string DefaultPath => Path.Combine(Application.persistentDataPath, "best_times.json");
 
+        /// Таблица карты. «Холмы Рандома» и «Город» в бете 0.1 — новые трассы (2.9 и 3.1 км, 2 круга): их рекорды в новых файлах,
+        /// старые таблицы (best_times.json, best_times_City.json) остаются на диске, но к новым трассам не относятся.
+        public static string PathFor(string mapKey)
+        {
+            if (string.IsNullOrEmpty(mapKey)) return DefaultPath;
+            string suffix = mapKey == "Hills" || mapKey == "City" ? "_beta" : "";
+            return Path.Combine(Application.persistentDataPath, $"best_times_{mapKey}{suffix}.json");
+        }
+
         /// Вставляет время в отсортированный по возрастанию список (меньше — лучше).
         /// Возвращает место с нуля или -1, если время не попало в топ. Одинаковое время встаёт после старого.
         public static int Add(List<float> times, float time)

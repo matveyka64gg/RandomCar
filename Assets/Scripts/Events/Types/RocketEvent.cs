@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RandomCar.Events
 {
-    /// Ракета: красный прицел на полосе цели, в последнюю секунду предупреждения видно падение.
+    /// Ракета: красный прицел на выбранном месте трассы, в последнюю секунду предупреждения видно падение.
     /// Взрыв отбрасывает машины в радиусе 3 м и ненадолго замедляет.
     public sealed class RocketEvent : RaceEvent
     {
@@ -30,7 +30,7 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = FairnessLimits.MaxHazardRadius;
-            var h = Predict(Target, Definition.WarningSeconds, Radius);
+            var h = Spot(Radius);
             Center = h.Position;
             right = h.Right;
             marker.Show(Center, h.Forward, Radius, false, false);
@@ -40,7 +40,7 @@ namespace RandomCar.Events
         protected override void OnTelegraphUpdate(float progress, float time)
         {
             marker.Pulse(progress);
-            float fallStart = Definition.WarningSeconds - FallSeconds;
+            float fallStart = WarningDuration - FallSeconds;
             if (time < fallStart) return;
             if (!rocket.gameObject.activeSelf)
             {

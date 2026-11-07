@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa2c6877d518264f87fd380e3c4a2c8, type: 3}
+  m_Name: Spec_Kometa
+  m_EditorClassIdentifier: RandomCar::RandomCar.Car.CarSpec
+  DisplayName: "\u041A\u043E\u043C\u0435\u0442\u0430"
+  Description: "\u0422\u044F\u0436\u0451\u043B\u044B\u0439 GT \u0441 \u0437\u0430\u0434\u043D\u0438\u043C \u043F\u0440\u0438\u0432\u043E\u0434\u043E\u043C \u0438 \u0448\u0438\u0440\u043E\u043A\u0438\u043C\u0438 \u0448\u0438\u043D\u0430\u043C\u0438. \u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0442\u0443\u0440\u0431\u0438\u043D\u0430 \u0441 \u0437\u0430\u043C\u0435\u0442\u043D\u043E\u0439 \u0437\u0430\u0434\u0435\u0440\u0436\u043A\u043E\u0439, \u043B\u0443\u0447\u0448\u0430\u044F \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043D\u0430 \u043F\u0440\u044F\u043C\u044B\u0445."
+  Mass: 1345
+  CenterOfMass: {x: 0, y: 0.38, z: -0.04}
+  InertiaScale: {x: 1.15, y: 1.2, z: 1}
+  Engine:
+    IdleRpm: 850
+    PeakTorqueRpm: 4200
+    MaxRpm: 7000
+    PeakTorque: 332
+    TorqueAtIdle: 0.55
+    TorqueAtMax: 0.75
+    EngineBraking: 85
+    FreeRevRate: 14000
+    LaunchRpm: 3500
+    Cylinders: 4
+  Gearbox:
+    Ratios:
+    - 3.15
+    - 2.22
+    - 1.7
+    - 1.38
+    - 1.17
+    - 1.03
+    Reverse: 3.2
+    FinalDrive: 3.59
+    Efficiency: 0.9
+    ShiftTime: 0.18
+    UpshiftAt: 0.93
+    DownshiftAt: 0.5
+  Turbo:
+    MaxBoost: 1
+    TorquePerBar: 0.52
+    SpoolStartRpm: 3200
+    FullBoostRpm: 5100
+    Lag: 0.85
+    Decay: 0.5
+    BlowOffThreshold: 0.4
+  Drive: 1
+  AwdFrontShare: 0.4
+  Front:
+    LongitudinalGrip: 1.2804
+    LateralGrip: 1.32
+    PeakSlipAngle: 7
+    SlideGrip: 0.74
+    LoadSensitivity: 0.12
+    Travel: 0.22
+    SpringFrequency: 1.8
+    DampingRatio: 0.42
+    AntiRoll: 0.85
+    BrakeShare: 0.62
+  Rear:
+    LongitudinalGrip: 1.3095001
+    LateralGrip: 1.35
+    PeakSlipAngle: 8
+    SlideGrip: 0.74
+    LoadSensitivity: 0.12
+    Travel: 0.22
+    SpringFrequency: 1.9
+    DampingRatio: 0.42
+    AntiRoll: 0.6
+    BrakeShare: 0.38
+  LooseSurfaceGrip: 0.95
+  BrakeDecel: 1.15
+  HandbrakeForce: 0.9
+  MaxSteerAngle: 33
+  Drag: 0.5
+  Downforce: 1.15
+  RollingResistance: 0.014
+  TopSpeedKmh: 218
+  SteerSpeed: 225
+  AirLeveling: 6.5
+  AirDamping: 1.8
+  AirSteer: 2.4
+  KnockResistance: 1.05
+  Bounciness: 0.12
+  BodyFriction: 0.14
+  LandingBounce: 0.95

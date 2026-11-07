@@ -8,16 +8,20 @@ namespace RandomCar.EditorTools
     /// Частицы для событий и машин. Создаются в редакторе как дочерние объекты префабов, в игре только запускаются.
     public static class FxFactory
     {
-        public enum Kind { Dust, Debris, Explosion, Smoke, Sparks, Muzzle, Trail, Confetti, Wind, WindLime, Boost, CarDust }
+        public enum Kind { Dust, Debris, Explosion, Smoke, Sparks, Muzzle, Trail, Confetti, Wind, WindLime, Boost, CarDust, TireSmoke, CarSparks, ExhaustPop,
+            // Хаос v4: слои мультяшных взрывов, фейерверки, пузыри невесомости, лучи уменьшателя.
+            Flash, Fireball, Ring, Stars, FireworkTrail, FireworkBurst, Glitter, Bubbles, Rays }
 
         static Material soft;
         static Material additive;
+        static Material ring;
 
         public static void EnsureAssets()
         {
             var dot = SoftDot();
             soft = ParticleMaterial("M_FxSoft", dot, false);
             additive = ParticleMaterial("M_FxAdd", dot, true);
+            ring = ParticleMaterial("M_FxRing", RingTexture(), true);
         }
 
         public static ParticleSystem Create(Kind kind, Transform parent, string name)
@@ -121,6 +125,116 @@ namespace RandomCar.EditorTools
                     emission.rateOverTime = 30f;
                     Shape(shape, ParticleSystemShapeType.Box, 0f, 0f, new Vector3(kind == Kind.Wind ? 10f : 3.4f, 2.2f, 1f));
                     Fade(ps, 1f, 1f);
+                    break;
+                case Kind.TireSmoke:
+                    Setup(main, false, 1f, (1.4f, 2.4f), (0.3f, 1.4f), (0.9f, 1.6f), C(0.93f, 0.93f, 0.95f, 0.55f), C(0.82f, 0.82f, 0.85f, 0.4f), -0.03f, 260);
+                    emission.rateOverTime = 0f;
+                    Shape(shape, ParticleSystemShapeType.Sphere, 0.25f, 0f);
+                    main.startRotation = new ParticleSystem.MinMaxCurve(0f, Mathf.PI * 2f);
+                    Fade(ps, 0.7f, 3.2f);
+                    break;
+                case Kind.CarSparks:
+                    renderer.sharedMaterial = additive;
+                    renderer.renderMode = ParticleSystemRenderMode.Stretch;
+                    renderer.velocityScale = 0.05f;
+                    renderer.lengthScale = 1.4f;
+                    Setup(main, false, 1f, (0.2f, 0.5f), (4f, 11f), (0.05f, 0.1f), C(1f, 0.92f, 0.55f, 1f), C(1f, 0.6f, 0.2f, 1f), 1.6f, 160);
+                    emission.rateOverTime = 0f;
+                    Shape(shape, ParticleSystemShapeType.Hemisphere, 0.2f, 0f);
+                    Fade(ps, 1f, 0.5f);
+                    break;
+                case Kind.ExhaustPop:
+                    renderer.sharedMaterial = additive;
+                    Setup(main, false, 0.5f, (0.06f, 0.14f), (2f, 5f), (0.25f, 0.5f), C(1f, 0.75f, 0.35f, 1f), C(0.45f, 0.65f, 1f, 1f), 0f, 40);
+                    emission.rateOverTime = 0f;
+                    Shape(shape, ParticleSystemShapeType.Cone, 0.04f, 14f, default, new Vector3(0f, 180f, 0f));
+                    Fade(ps, 1f, 1.8f);
+                    break;
+                case Kind.Flash:
+                    // Вспышка: один-два огромных ярких «блина» на долю секунды.
+                    renderer.sharedMaterial = additive;
+                    Setup(main, false, 0.3f, (0.1f, 0.18f), (0f, 0f), (7f, 10f), C(1f, 0.97f, 0.8f, 1f), C(1f, 0.85f, 0.5f, 1f), 0f, 4);
+                    Burst(emission, 2);
+                    Shape(shape, ParticleSystemShapeType.Sphere, 0.2f, 0f);
+                    Fade(ps, 0.5f, 1.4f);
+                    break;
+                case Kind.Fireball:
+                    // Огненный шар: тёплые клубы, расширяются и темнеют.
+                    renderer.sharedMaterial = additive;
+                    Setup(main, false, 1f, (0.45f, 0.9f), (2f, 6f), (1.6f, 3.2f), C(1f, 0.9f, 0.4f, 1f), C(1f, 0.55f, 0.15f, 1f), -0.35f, 40);
+                    Burst(emission, 20);
+                    Shape(shape, ParticleSystemShapeType.Hemisphere, 1f, 0f);
+                    main.startRotation = new ParticleSystem.MinMaxCurve(0f, Mathf.PI * 2f);
+                    var fireColor = ps.colorOverLifetime;
+                    fireColor.enabled = true;
+                    fireColor.color = Gradient((0f, new Color(1f, 0.95f, 0.6f)), (0.35f, new Color(1f, 0.45f, 0.12f)), (1f, new Color(0.35f, 0.1f, 0.05f)), 1f, 0f);
+                    Grow(ps, 0.5f, 1.8f);
+                    break;
+                case Kind.Ring:
+                    // Ударная волна: плоское кольцо по земле, быстро расширяется.
+                    renderer.sharedMaterial = ring;
+                    renderer.renderMode = ParticleSystemRenderMode.HorizontalBillboard;
+                    Setup(main, false, 0.6f, (0.45f, 0.45f), (0f, 0f), (1.5f, 1.5f), C(1f, 0.92f, 0.7f, 0.9f), C(1f, 0.92f, 0.7f, 0.9f), 0f, 2);
+                    Burst(emission, 1);
+                    Shape(shape, ParticleSystemShapeType.Sphere, 0.01f, 0f);
+                    var ringColor = ps.colorOverLifetime;
+                    ringColor.enabled = true;
+                    ringColor.color = Gradient((0f, Color.white), (1f, Color.white), 1f, 0f);
+                    Grow(ps, 1f, 9f);
+                    break;
+                case Kind.Stars:
+                    // Мультяшные звёздочки: разлетаются и падают.
+                    renderer.sharedMaterial = additive;
+                    Setup(main, false, 1f, (0.6f, 1.1f), (3f, 7f), (0.25f, 0.45f), C(1f, 0.95f, 0.4f, 1f), C(1f, 1f, 0.85f, 1f), 0.7f, 30);
+                    Burst(emission, 14);
+                    Shape(shape, ParticleSystemShapeType.Hemisphere, 0.6f, 0f);
+                    Fade(ps, 1f, 0.4f);
+                    break;
+                case Kind.FireworkTrail:
+                    renderer.sharedMaterial = additive;
+                    Setup(main, true, 1f, (0.25f, 0.5f), (0.2f, 1f), (0.18f, 0.32f), C(1f, 0.9f, 0.55f, 1f), C(1f, 0.7f, 0.3f, 1f), 0.2f, 80);
+                    emission.rateOverTime = 70f;
+                    Shape(shape, ParticleSystemShapeType.Sphere, 0.05f, 0f);
+                    Fade(ps, 1f, 0.3f);
+                    break;
+                case Kind.FireworkBurst:
+                    // Раскрытие фейерверка: шар цветных искр с хвостами, медленно оседает. Обычное смешивание (не сложение):
+                    // на дневном небе цвета остаются цветами, а не выгорают в белый.
+                    renderer.sharedMaterial = soft;
+                    renderer.renderMode = ParticleSystemRenderMode.Stretch;
+                    renderer.velocityScale = 0.1f;
+                    renderer.lengthScale = 1.4f;
+                    Setup(main, false, 1f, (1.2f, 1.8f), (10f, 16f), (0.9f, 1.4f), C(1f, 0.5f, 0.3f, 1f), C(1f, 0.85f, 0.4f, 1f), 0.35f, 140);
+                    Burst(emission, 110);
+                    Shape(shape, ParticleSystemShapeType.Sphere, 0.3f, 0f);
+                    var limit = ps.limitVelocityOverLifetime;
+                    limit.enabled = true;
+                    limit.limit = 2f;
+                    limit.dampen = 0.08f;
+                    Fade(ps, 1f, 0.5f);
+                    break;
+                case Kind.Glitter:
+                    renderer.sharedMaterial = additive;
+                    Setup(main, false, 1f, (0.6f, 1.2f), (2f, 6f), (0.1f, 0.2f), C(1f, 1f, 0.9f, 1f), C(1f, 0.9f, 0.6f, 1f), 0.8f, 90);
+                    emission.rateOverTime = 0f;
+                    emission.SetBursts(new[] { new ParticleSystem.Burst(0.25f, (short)70) });
+                    Shape(shape, ParticleSystemShapeType.Sphere, 4f, 0f);
+                    Fade(ps, 1f, 0.2f);
+                    break;
+                case Kind.Bubbles:
+                    // Невесомость: мыльные пузыри медленно поднимаются над участком.
+                    Setup(main, true, 4f, (3f, 5f), (0.3f, 1.1f), (0.35f, 1.1f), C(0.8f, 0.6f, 1f, 0.45f), C(0.6f, 0.95f, 1f, 0.45f), -0.04f, 200);
+                    emission.rateOverTime = 34f;
+                    Shape(shape, ParticleSystemShapeType.Box, 0f, 0f, new Vector3(18f, 4f, 70f));
+                    Fade(ps, 0.6f, 1.2f);
+                    break;
+                case Kind.Rays:
+                    // Луч уменьшателя: сиреневые искры падают из арки.
+                    renderer.sharedMaterial = additive;
+                    Setup(main, true, 1f, (0.6f, 1f), (4f, 7f), (0.15f, 0.3f), C(0.75f, 0.45f, 1f, 1f), C(0.95f, 0.75f, 1f, 1f), 0f, 120);
+                    emission.rateOverTime = 60f;
+                    Shape(shape, ParticleSystemShapeType.Box, 0f, 0f, new Vector3(6f, 0.2f, 1f), new Vector3(90f, 0f, 0f));
+                    Fade(ps, 1f, 0.5f);
                     break;
                 case Kind.Boost:
                     renderer.sharedMaterial = additive;
@@ -239,7 +353,60 @@ namespace RandomCar.EditorTools
             return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
         }
 
-        static Material ParticleMaterial(string name, Texture2D texture, bool additiveBlend)
+        /// Кольцо ударной волны: светлая обводка с мягким краем, центр прозрачный.
+        static Texture2D RingTexture()
+        {
+            string path = $"{ArtLibrary.TexturesDir}/T_FxRing.png";
+            if (!File.Exists(path))
+            {
+                const int size = 128;
+                var tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+                for (int y = 0; y < size; y++)
+                    for (int x = 0; x < size; x++)
+                    {
+                        float dx = (x + 0.5f) / size * 2f - 1f, dy = (y + 0.5f) / size * 2f - 1f;
+                        float r = Mathf.Sqrt(dx * dx + dy * dy);
+                        float a = Mathf.Clamp01(1f - Mathf.Abs(r - 0.82f) / 0.14f);
+                        tex.SetPixel(x, y, new Color(1f, 1f, 1f, a * a * (3f - 2f * a)));
+                    }
+                File.WriteAllBytes(path, tex.EncodeToPNG());
+                Object.DestroyImmediate(tex);
+                AssetDatabase.ImportAsset(path);
+                var importer = (TextureImporter)AssetImporter.GetAtPath(path);
+                importer.alphaIsTransparency = true;
+                importer.wrapMode = TextureWrapMode.Clamp;
+                importer.mipmapEnabled = true;
+                importer.SaveAndReimport();
+            }
+            return AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+        }
+
+        /// Материал следов шин: прозрачный, с мягкими краями и зерном резины; цвет и прозрачность — из вершин.
+        public static Material SkidMaterial()
+        {
+            const string texPath = "Assets/Art/Textures/T_Skid.asset";
+            var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(texPath);
+            if (tex == null)
+            {
+                tex = new Texture2D(32, 64, TextureFormat.RGBA32, true) { name = "T_Skid", wrapMode = TextureWrapMode.Repeat };
+                var random = new System.Random(3);
+                for (int y = 0; y < 64; y++)
+                    for (int x = 0; x < 32; x++)
+                    {
+                        float u = x / 31f;
+                        float edge = Mathf.Clamp01(Mathf.Min(u, 1f - u) * 6f);
+                        float grain = 0.75f + 0.25f * (float)random.NextDouble();
+                        float tread = 0.85f + 0.15f * Mathf.Sin(u * Mathf.PI * 10f);
+                        tex.SetPixel(x, y, new Color(1f, 1f, 1f, edge * grain * tread));
+                    }
+                tex.Apply(true);
+                AssetDatabase.CreateAsset(tex, texPath);
+            }
+            var m = ParticleMaterial("M_SkidMarks", tex, false);
+            return m;
+        }
+
+        internal static Material ParticleMaterial(string name, Texture2D texture, bool additiveBlend)
         {
             string path = $"{ArtLibrary.MaterialsDir}/{name}.mat";
             var shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");

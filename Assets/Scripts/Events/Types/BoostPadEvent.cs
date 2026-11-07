@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RandomCar.Events
 {
-    /// Ускорительная полоса: бирюзовые шевроны проявляются на полосе цели. Наезд: буст +25% на 2 с.
+    /// Ускорительная полоса: бирюзовые шевроны проявляются на выбранном месте трассы. Наезд: буст +25% на 2 с.
     public sealed class BoostPadEvent : RaceEvent
     {
         Transform pad;
@@ -17,7 +17,7 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 2.2f;
-            var h = Predict(Target, Definition.WarningSeconds + 0.2f, 2f);
+            var h = Spot(2f);
             Center = h.Position;
             pad.gameObject.SetActive(true);
             pad.SetPositionAndRotation(Center + Vector3.up * 0.01f, Quaternion.LookRotation(h.Forward));

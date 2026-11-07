@@ -25,7 +25,8 @@ namespace RandomCar.EditorTools
             importer.materialLocation = ModelImporterMaterialLocation.InPrefab;
             importer.importNormals = ModelImporterNormals.Import;
             importer.importTangents = ModelImporterTangents.None;
-            importer.isReadable = false;
+            // Кузова машин читаемы: наклейки проецируются на их сетку в игре.
+            importer.isReadable = assetPath.StartsWith(ModelsRoot + "Cars/");
             importer.meshCompression = ModelImporterMeshCompression.Off;
             importer.addCollider = false;
         }

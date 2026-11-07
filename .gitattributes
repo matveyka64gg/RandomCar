@@ -169,3 +169,7 @@ Packages/packages-lock.json linguist-generated
 
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
+
+# RandomCar: готовые бета-сборки — бинарные файлы в Git LFS, тексты-подсказки — обычным текстом
+Builds/**                  lfs
+Builds/**/*.txt            -filter -diff -merge text

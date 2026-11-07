@@ -6,7 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 9513cacb243c3fd48a6405e1e65b0fc8
+    path: Assets/Scenes/Game.unity
+    guid: f4c3bd5a3e31ede4a803b1ed1f2addcc
+  - enabled: 1
+    path: Assets/Scenes/Map_Hills.unity
+    guid: 0d17301844e6652478da293fa93a7526
+  - enabled: 1
+    path: Assets/Scenes/Map_City.unity
+    guid: 93c34dce9427d8442a3abc03403382f6
+  - enabled: 1
+    path: Assets/Scenes/Map_Desert.unity
+    guid: f274c2b8967fe0c4e98f1403c236649d
+  - enabled: 1
+    path: Assets/Scenes/Map_TelAviv.unity
+    guid: 1ec8a3b5924bd0240b6dacac816c13ef
+  - enabled: 1
+    path: Assets/Scenes/Map_Arena.unity
+    guid: f32828ca5866cf04981598773e6e49e3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

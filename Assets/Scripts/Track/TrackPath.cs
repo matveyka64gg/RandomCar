@@ -40,6 +40,9 @@ namespace RandomCar.Track
 
         public int Count => points.Length;
 
+        /// Половина ширины проезжей части, м (из TrackDefinition): ИИ, события и проверки «на дороге ли машина».
+        public float HalfWidth { get; set; } = 6f;
+
         /// Длина трассы по осевой линии, м.
         public float Length { get; }
 

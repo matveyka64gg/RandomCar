@@ -18,7 +18,7 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
+# Готовые бета-сборки (Builds/Windows, Builds/Android) коммитятся через Git LFS — см. .gitattributes.
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log
@@ -78,8 +78,7 @@ sysinfo.txt
 # Mono auto generated files
 mono_crash.*
 
-# Builds
-*.apk
+# Builds (APK бета-версии лежит в Builds/Android и хранится в Git LFS)
 *.aab
 *.unitypackage
 *.unitypackage.meta
@@ -112,3 +111,8 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# RandomCar: снимки и логи проверок (сотни МБ), пользовательский контент редактора (UserContent в корне проекта —
+# папка «положи файл» для запуска из редактора, в сборках она рядом с RandomCar.exe)
+/[Ss]creenshots/
+/UserContent/

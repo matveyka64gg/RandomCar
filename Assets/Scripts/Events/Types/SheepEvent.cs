@@ -7,7 +7,9 @@ namespace RandomCar.Events
     public sealed class SheepEvent : RaceEvent
     {
         const int Count = 6;
-        const float SideDistance = 9.5f;
+        /// Стадо выбегает из-за обочины: столько метров за краем дороги.
+        const float SideBeyondRoad = 3.5f;
+        float SideDistance => RoadHalf + SideBeyondRoad;
 
         readonly Transform[] sheep = new Transform[Count];
         readonly Vector3[] lanes = new Vector3[Count];
@@ -28,10 +30,10 @@ namespace RandomCar.Events
         protected override void OnTelegraph()
         {
             Radius = 3f;
-            var h = Predict(Target, Definition.WarningSeconds + 1.2f, 1f);
+            var h = Spot(1f);
             axis = h.Axis;
             right = h.Right;
-            side = Context.Random.Range(0f, 1f) < 0.5f ? -1f : 1f;
+            side = RandomRange(0f, 1f) < 0.5f ? -1f : 1f;
             Center = axis;
             for (int i = 0; i < Count; i++)
             {

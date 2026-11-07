@@ -39,6 +39,30 @@ namespace RandomCar.EditorTools
             return panel;
         }
 
+        const string OverlayPanelPath = Dir + "/RandomCarOverlayPanel.asset";
+
+        /// Панель поверх всего интерфейса (полноэкранная картинка ГИПЕРГАМИИ): тот же масштаб, порядок выше.
+        public static PanelSettings OverlayPanelSettings()
+        {
+            var main = PanelSettings();
+            var panel = AssetDatabase.LoadAssetAtPath<PanelSettings>(OverlayPanelPath);
+            if (panel == null)
+            {
+                panel = ScriptableObject.CreateInstance<PanelSettings>();
+                AssetDatabase.CreateAsset(panel, OverlayPanelPath);
+            }
+            panel.themeStyleSheet = main.themeStyleSheet;
+            panel.scaleMode = main.scaleMode;
+            panel.referenceResolution = main.referenceResolution;
+            panel.screenMatchMode = main.screenMatchMode;
+            panel.match = main.match;
+            panel.clearColor = false;
+            panel.sortingOrder = main.sortingOrder + 100;
+            EditorUtility.SetDirty(panel);
+            AssetDatabase.SaveAssets();
+            return panel;
+        }
+
         public static StyleSheet Style()
         {
             // Градиент затемнения меню: Clamp, иначе фильтрация подмешивает тёмный левый край к правому (видна линия).

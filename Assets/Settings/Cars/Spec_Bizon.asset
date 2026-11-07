@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa2c6877d518264f87fd380e3c4a2c8, type: 3}
+  m_Name: Spec_Bizon
+  m_EditorClassIdentifier: RandomCar::RandomCar.Car.CarSpec
+  DisplayName: "\u0411\u0438\u0437\u043E\u043D"
+  Description: "\u0410\u043C\u0435\u0440\u0438\u043A\u0430\u043D\u0441\u043A\u0438\u0439 \u043C\u0430\u0441\u043B\u043A\u0430\u0440 \u0441 \u0431\u043E\u043B\u044C\u0448\u0438\u043C \u0430\u0442\u043C\u043E\u0441\u0444\u0435\u0440\u043D\u044B\u043C V8. \u041C\u043E\u0449\u043D\u044B\u0439 \u0438 \u0442\u044F\u0436\u0451\u043B\u044B\u0439, \u0437\u0430\u0434\u043D\u0438\u0439 \u043F\u0440\u0438\u0432\u043E\u0434 \u043B\u0435\u0433\u043A\u043E \u0441\u0440\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u0432 \u0437\u0430\u043D\u043E\u0441; \u0442\u043E\u0440\u043C\u043E\u0437\u0430 \u0438 \u0441\u0446\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u0441\u043A\u0440\u043E\u043C\u043D\u0435\u0435, \u0447\u0435\u043C \u0443 \u0441\u043F\u043E\u0440\u0442\u043A\u0430\u0440\u043E\u0432."
+  Mass: 1720
+  CenterOfMass: {x: 0, y: 0.42, z: 0.1}
+  InertiaScale: {x: 1.15, y: 1.2, z: 1.05}
+  Engine:
+    IdleRpm: 750
+    PeakTorqueRpm: 4500
+    MaxRpm: 6800
+    PeakTorque: 620
+    TorqueAtIdle: 0.66
+    TorqueAtMax: 0.78
+    EngineBraking: 110
+    FreeRevRate: 14000
+    LaunchRpm: 3200
+    Cylinders: 4
+  Gearbox:
+    Ratios:
+    - 3
+    - 2.05
+    - 1.55
+    - 1.22
+    - 1
+    - 0.82
+    Reverse: 3.2
+    FinalDrive: 3.55
+    Efficiency: 0.9
+    ShiftTime: 0.18
+    UpshiftAt: 0.93
+    DownshiftAt: 0.5
+  Turbo:
+    MaxBoost: 0
+    TorquePerBar: 0
+    SpoolStartRpm: 2000
+    FullBoostRpm: 4000
+    Lag: 0.5
+    Decay: 0.5
+    BlowOffThreshold: 0
+  Drive: 1
+  AwdFrontShare: 0.4
+  Front:
+    LongitudinalGrip: 1.1834
+    LateralGrip: 1.22
+    PeakSlipAngle: 7
+    SlideGrip: 0.66
+    LoadSensitivity: 0.12
+    Travel: 0.24
+    SpringFrequency: 1.7
+    DampingRatio: 0.42
+    AntiRoll: 0.9
+    BrakeShare: 0.62
+  Rear:
+    LongitudinalGrip: 1.1252
+    LateralGrip: 1.16
+    PeakSlipAngle: 7.5
+    SlideGrip: 0.66
+    LoadSensitivity: 0.12
+    Travel: 0.24
+    SpringFrequency: 1.8
+    DampingRatio: 0.42
+    AntiRoll: 0.5
+    BrakeShare: 0.38
+  LooseSurfaceGrip: 0.95
+  BrakeDecel: 1.05
+  HandbrakeForce: 1.2
+  MaxSteerAngle: 33
+  Drag: 0.82
+  Downforce: 0.6
+  RollingResistance: 0.014
+  TopSpeedKmh: 255
+  SteerSpeed: 195
+  AirLeveling: 5.5
+  AirDamping: 1.5
+  AirSteer: 2.2
+  KnockResistance: 1.2
+  Bounciness: 0.1
+  BodyFriction: 0.14
+  LandingBounce: 0.8

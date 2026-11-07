@@ -23,12 +23,12 @@ namespace RandomCar.Events
 
         protected override void OnTelegraph()
         {
-            Radius = FairnessLimits.MaxHazardRadius;
-            var h = Predict(Target, Definition.WarningSeconds, Radius);
+            Radius = MaxRadius;
+            var h = Spot(Radius);
             Center = h.Position;
-            float side = Context.Random.Range(0f, 1f) < 0.5f ? -1f : 1f;
+            float side = RandomRange(0f, 1f) < 0.5f ? -1f : 1f;
             windDirection = -side * h.Right;
-            sockPosition = h.Axis + h.Right * side * 13.5f;
+            sockPosition = Roadside(h, side, 13.5f);
             sock.gameObject.SetActive(true);
             // Модель конуса смотрит по +x: поворачиваем так, чтобы он «дул» в сторону дороги.
             sock.SetPositionAndRotation(sockPosition - Vector3.up * 4.5f, Quaternion.LookRotation(Vector3.Cross(windDirection, Vector3.up)) );

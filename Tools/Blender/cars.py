@@ -326,13 +326,7 @@ def extras(spec, m):
     zf, zr = st[-1][0], st[0][0]
     c = spec["cabin"]
     parts = []
-    if spec.get("spoiler"):
-        hw, yb, yt = station_at(st, zr + 0.25)
-        y = yt + 0.26
-        parts.append(box("Wing", (0, y, zr + 0.22), (1.70, 0.05, 0.32), m["trim"], bevel=0.02))
-        for s in (-1, 1):
-            parts.append(box("WingEnd", (s * 0.86, y - 0.02, zr + 0.22), (0.03, 0.16, 0.36), m["paint"], bevel=0.01))
-            parts.append(beam("WingStrut", (s * 0.48, yt - 0.04, zr + 0.30), (s * 0.48, y - 0.02, zr + 0.22), 0.05, 0.10, m["trim"]))
+    # Спойлер больше не часть кузова: детали из библиотеки (parts.py) ставятся на точку SpoilerMount.
     if spec.get("scoop"):
         z = 1.05
         hw, yb, yt = station_at(st, z)
@@ -364,30 +358,60 @@ def extras(spec, m):
 
 
 def wheel(name, spec, m):
+    """Колесо: шина и внутренняя тёмная чаша. Сам диск — отдельный объект (rim), его можно заменить в гараже."""
     wh = spec["wheel"]
     r, w = wh["r"], wh["w"]
-    rim_mat = {"M_Rim": m["rim"], "M_RimDark": m["rimdark"], "M_RimWhite": m["rimwhite"], "M_Chrome": m["chrome"]}[spec["rim"]]
     out = w / 2
     parts = [cylinder(name, (0, 0, 0), r, w, 'x', m["tire"], segments=40, bevel=0.05, bevel_segments=3)]
+    # Боковина с выпуклой надписью-кольцом и протектор: два тонких кольца, читаются на крупном плане.
+    parts.append(cylinder("SidewallRing", (out - 0.004, 0, 0), r * 0.9, 0.012, 'x', m["trim"], segments=40))
     parts.append(cylinder("RimBack", (out - 0.05, 0, 0), r * 0.70, 0.02, 'x', m["trim"], segments=32))
-    style = spec["rim_style"]
+    ob = join(parts[0], parts[1:])
+    smooth(ob, 35)
+    return ob
+
+
+def rim(name, style, rim_mat, m, r=0.36, w=0.27):
+    """Диск в осях колеса (наружу +x). Используется и для машин, и для библиотеки деталей."""
+    out = w / 2
+    parts = []
     if style == "dish":
-        parts.append(cylinder("Dish", (out - 0.02, 0, 0), r * 0.66, 0.04, 'x', rim_mat, segments=32, bevel=0.012))
+        parts.append(cylinder(name, (out - 0.02, 0, 0), r * 0.66, 0.04, 'x', rim_mat, segments=32, bevel=0.012))
         parts.append(cylinder("DishRing", (out - 0.005, 0, 0), r * 0.40, 0.03, 'x', m["trim"], segments=24))
+        for k in range(8):
+            a = 2 * math.pi * k / 8
+            parts.append(cylinder("DishHole", (out + 0.001, r * 0.53 * math.sin(a), r * 0.53 * math.cos(a)), 0.03, 0.012, 'x', m["trim"], segments=12))
+        parts.append(cylinder("Hub", (out + 0.005, 0, 0), r * 0.17, 0.04, 'x', rim_mat, segments=16, bevel=0.01))
+    elif style == "mesh":
+        parts.append(cylinder(name, (out - 0.025, 0, 0), r * 0.70, 0.035, 'x', rim_mat, segments=32))
+        parts.append(cylinder("RimHole", (out - 0.006, 0, 0), r * 0.62, 0.03, 'x', m["trim"], segments=32))
+        for k in range(12):
+            a = 2 * math.pi * k / 12
+            b = a + math.pi / 6
+            parts.append(beam("Mesh", (out - 0.01, 0.07 * math.sin(a), 0.07 * math.cos(a)), (out - 0.01, r * 0.64 * math.sin(b), r * 0.64 * math.cos(b)), 0.025, 0.03, rim_mat, bevel=0.005))
+            parts.append(beam("Mesh", (out - 0.01, 0.07 * math.sin(b), 0.07 * math.cos(b)), (out - 0.01, r * 0.64 * math.sin(a), r * 0.64 * math.cos(a)), 0.025, 0.03, rim_mat, bevel=0.005))
+        parts.append(cylinder("Hub", (out + 0.005, 0, 0), r * 0.15, 0.04, 'x', m["chrome"], segments=16, bevel=0.01))
     else:
         spokes = {"five": 5, "six": 6, "ten": 10}[style]
         thick = {"five": 0.075, "six": 0.07, "ten": 0.04}[style]
-        parts.append(cylinder("RimLip", (out - 0.025, 0, 0), r * 0.70, 0.035, 'x', rim_mat, segments=32))
+        parts.append(cylinder(name, (out - 0.025, 0, 0), r * 0.70, 0.035, 'x', rim_mat, segments=32))
         parts.append(cylinder("RimHole", (out - 0.006, 0, 0), r * 0.62, 0.03, 'x', m["trim"], segments=32))
         for k in range(spokes):
             a = 2 * math.pi * k / spokes
             p0 = (out - 0.01, 0.06 * math.sin(a), 0.06 * math.cos(a))
             p1 = (out - 0.01, r * 0.64 * math.sin(a), r * 0.64 * math.cos(a))
             parts.append(beam("Spoke", p0, p1, thick, 0.035, rim_mat, bevel=0.008))
-    parts.append(cylinder("Hub", (out + 0.005, 0, 0), r * 0.17, 0.04, 'x', m["chrome"] if style != "dish" else m["rim"], segments=16, bevel=0.01))
+        parts.append(cylinder("Hub", (out + 0.005, 0, 0), r * 0.17, 0.04, 'x', m["chrome"], segments=16, bevel=0.01))
+        # Гайки на ступице
+        for k in range(5):
+            a = 2 * math.pi * k / 5
+            parts.append(cylinder("Nut", (out + 0.02, 0.035 * math.sin(a), 0.035 * math.cos(a)), 0.012, 0.02, 'x', m["chrome"], segments=8))
     ob = join(parts[0], parts[1:])
     smooth(ob, 35)
     return ob
+
+
+RIM_MATS = {"M_Rim": "rim", "M_RimDark": "rimdark", "M_RimWhite": "rimwhite", "M_Chrome": "chrome"}
 
 
 def build_car(key):
@@ -402,43 +426,62 @@ def build_car(key):
     set_parent(body, root)
 
     wh = spec["wheel"]
+    rim_mat = m[RIM_MATS[spec["rim"]]]
     for label, x_sign, z in (("FL", -1, wh["zf"]), ("FR", 1, wh["zf"]), ("RL", -1, wh["zr"]), ("RR", 1, wh["zr"])):
         wob = wheel("Wheel_" + label, spec, m)
         wob.name = "Wheel_" + label
         wob.data.name = "Wheel_" + key + "_" + label
-        if x_sign < 0:
-            wob.rotation_euler = (0, 0, math.pi)
-        wob.location = C(x_sign * wh["x"], wh["r"], z)
-        set_parent(wob, root)
+        rob = rim("Rim_" + label, spec["rim_style"], rim_mat, m, wh["r"], wh["w"])
+        rob.name = "Rim_" + label
+        rob.data.name = "Rim_" + key + "_" + label
+        # Диск — сосед колеса с тем же трансформом (вложенные объекты экспорт FBX портит);
+        # внутрь колеса его переносит сборщик префабов в Unity.
+        for ob in (wob, rob):
+            if x_sign < 0:
+                ob.rotation_euler = (0, 0, math.pi)
+            ob.location = C(x_sign * wh["x"], wh["r"], z)
+            set_parent(ob, root)
+
+    # Точка крепления спойлера: середина задней кромки крыши багажника.
+    st = spec["stations"]
+    zr = st[0][0]
+    hw, yb, yt = station_at(st, zr + 0.25)
+    mount = empty("SpoilerMount", (0, yt, zr + 0.25))
+    set_parent(mount, root)
     return root
 
 
-reset_scene()
-os.makedirs(PREVIEW, exist_ok=True)
-roots = {}
-report = []
-for key in CARS:
-    # Остальные машины прячем, чтобы крупные планы были чистыми.
-    for other in roots.values():
-        for ob in [other] + all_children(other):
-            ob.hide_render = True
-    root = build_car(key)
-    roots[key] = root
-    tris = sum(tri_count(o) for o in all_children(root))
-    report.append(f"{key}: {tris} tris")
-    render_preview(os.path.join(PREVIEW, f"car_{key}_front.png"), (0, 0, 0.6), 7.5, 1.7, 35, lens=50)
-    render_preview(os.path.join(PREVIEW, f"car_{key}_rear.png"), (0, 0, 0.6), 7.5, 2.2, 215, lens=50)
-    export_fbx(root, os.path.join(ART, "Cars", f"Car_{key}.fbx"))
-    # Имена в Blender глобальные: освобождаем Body/Wheel_* для следующей машины.
-    for ob in all_children(root):
-        ob.name = ob.name + "_" + key
+def build_cars():
+    reset_scene()
+    os.makedirs(PREVIEW, exist_ok=True)
+    roots = {}
+    report = []
+    for key in CARS:
+        # Остальные машины прячем, чтобы крупные планы были чистыми.
+        for other in roots.values():
+            for ob in [other] + all_children(other):
+                ob.hide_render = True
+        root = build_car(key)
+        roots[key] = root
+        tris = sum(tri_count(o) for o in all_children(root))
+        report.append(f"{key}: {tris} tris")
+        render_preview(os.path.join(PREVIEW, f"car_{key}_front.png"), (0, 0, 0.6), 7.5, 1.7, 35, lens=50)
+        render_preview(os.path.join(PREVIEW, f"car_{key}_rear.png"), (0, 0, 0.6), 7.5, 2.2, 215, lens=50)
+        export_fbx(root, os.path.join(ART, "Cars", f"Car_{key}.fbx"))
+        # Имена в Blender глобальные: освобождаем Body/Wheel_* для следующей машины.
+        for ob in all_children(root):
+            ob.name = ob.name + "_" + key
 
-for idx, (key, root) in enumerate(roots.items()):
-    root.location.x = (idx - 1.5) * 2.6
-    for ob in [root] + all_children(root):
-        ob.hide_render = False
-render_preview(os.path.join(PREVIEW, "cars_lineup.png"), (0, 0, 0.5), 14, 4.5, 20, lens=40)
-for root in roots.values():
-    root.location.x = 0
+    for idx, (key, root) in enumerate(roots.items()):
+        root.location.x = (idx - 1.5) * 2.6
+        for ob in [root] + all_children(root):
+            ob.hide_render = False
+    render_preview(os.path.join(PREVIEW, "cars_lineup.png"), (0, 0, 0.5), 14, 4.5, 20, lens=40)
+    for root in roots.values():
+        root.location.x = 0
 
-print(chr(10).join(report))
+    print(chr(10).join(report))
+
+
+if not globals().get("PARTS_ONLY"):
+    build_cars()

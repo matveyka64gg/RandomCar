@@ -21,6 +21,23 @@ MonoBehaviour:
     Weight: 1
     WarningSeconds: 2
     ActiveSeconds: 3
+    ZoneLength: 12
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 8
+    Blocks: 0.35
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: rocket
     Title: "\u0420\u0430\u043A\u0435\u0442\u0430"
     Warning: "\u0420\u0430\u043A\u0435\u0442\u0430 \u043B\u0435\u0442\u0438\u0442!"
@@ -29,6 +46,23 @@ MonoBehaviour:
     Weight: 0.75
     WarningSeconds: 2
     ActiveSeconds: 1.5
+    ZoneLength: 8
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 0.5
+    Sustain: 0
+    Scale: 1
+    Tags: 130
+    Blocks: 0.4
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: tank
     Title: "\u0422\u0430\u043D\u043A"
     Warning: "\u0422\u0430\u043D\u043A \u0446\u0435\u043B\u0438\u0442\u0441\u044F!"
@@ -37,6 +71,23 @@ MonoBehaviour:
     Weight: 0.75
     WarningSeconds: 2
     ActiveSeconds: 4
+    ZoneLength: 10
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 0.6
+    Sustain: 1
+    Scale: 1
+    Tags: 2
+    Blocks: 0.4
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: sheep
     Title: "\u0421\u0442\u0430\u0434\u043E \u043E\u0432\u0435\u0446"
     Warning: "\u041E\u0432\u0446\u044B \u043D\u0430 \u0434\u043E\u0440\u043E\u0433\u0435!"
@@ -45,6 +96,23 @@ MonoBehaviour:
     Weight: 0.75
     WarningSeconds: 2.5
     ActiveSeconds: 3
+    ZoneLength: 12
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 1.2
+    Sustain: 0
+    Scale: 1
+    Tags: 8
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: ball
     Title: "\u0413\u0438\u0433\u0430\u043D\u0442\u0441\u043A\u0438\u0439 \u043C\u044F\u0447"
     Warning: "\u041C\u044F\u0447 \u043A\u0430\u0442\u0438\u0442\u0441\u044F!"
@@ -53,6 +121,23 @@ MonoBehaviour:
     Weight: 0.75
     WarningSeconds: 2.5
     ActiveSeconds: 3
+    ZoneLength: 10
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 1.2
+    Sustain: 0
+    Scale: 0
+    Tags: 1
+    Blocks: 0.3
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: banana
     Title: "\u0411\u0430\u043D\u0430\u043D"
     Warning: "\u0421\u043A\u043E\u043B\u044C\u0437\u043A\u043E!"
@@ -61,6 +146,23 @@ MonoBehaviour:
     Weight: 0.75
     WarningSeconds: 1.5
     ActiveSeconds: 4
+    ZoneLength: 8
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 4
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: pillars
     Title: "\u041A\u0430\u043C\u0435\u043D\u043D\u044B\u0435 \u0441\u0442\u043E\u043B\u0431\u044B"
     Warning: "\u0417\u0435\u043C\u043B\u044F \u0442\u0440\u0435\u0441\u043A\u0430\u0435\u0442\u0441\u044F!"
@@ -69,6 +171,23 @@ MonoBehaviour:
     Weight: 0.5
     WarningSeconds: 2
     ActiveSeconds: 3
+    ZoneLength: 10
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 64
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: wind
     Title: "\u041F\u043E\u0440\u044B\u0432 \u0432\u0435\u0442\u0440\u0430"
     Warning: "\u0411\u043E\u043A\u043E\u0432\u043E\u0439 \u0432\u0435\u0442\u0435\u0440!"
@@ -77,6 +196,23 @@ MonoBehaviour:
     Weight: 0.75
     WarningSeconds: 2
     ActiveSeconds: 1.2
+    ZoneLength: 12
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 0.4
+    Sustain: 0
+    Scale: 0
+    Tags: 0
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: ramp
     Title: "\u0422\u0440\u0430\u043C\u043F\u043B\u0438\u043D"
     Warning: "\u0422\u0440\u0430\u043C\u043F\u043B\u0438\u043D \u0432\u043F\u0435\u0440\u0435\u0434\u0438!"
@@ -85,6 +221,23 @@ MonoBehaviour:
     Weight: 1.5
     WarningSeconds: 1.5
     ActiveSeconds: 4
+    ZoneLength: 9
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 16
+    Blocks: 0.3
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: crate
     Title: "\u0411\u043E\u043D\u0443\u0441\u043D\u044B\u0435 \u044F\u0449\u0438\u043A\u0438"
     Warning: "\u042F\u0449\u0438\u043A\u0438 \u0441 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u0435\u043C!"
@@ -93,6 +246,23 @@ MonoBehaviour:
     Weight: 1.5
     WarningSeconds: 1.5
     ActiveSeconds: 4
+    ZoneLength: 9
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 256
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: boostpad
     Title: "\u0423\u0441\u043A\u043E\u0440\u0438\u0442\u0435\u043B\u044C"
     Warning: "\u041F\u043E\u043B\u043E\u0441\u0430 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u044F!"
@@ -101,6 +271,23 @@ MonoBehaviour:
     Weight: 1.5
     WarningSeconds: 1.5
     ActiveSeconds: 4
+    ZoneLength: 11
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 256
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
   - Id: tailwind
     Title: "\u041F\u043E\u043F\u0443\u0442\u043D\u044B\u0439 \u0432\u0435\u0442\u0435\u0440"
     Warning: "\u041F\u043E\u043F\u0443\u0442\u043D\u044B\u0439 \u0432\u0435\u0442\u0435\u0440!"
@@ -108,7 +295,1002 @@ MonoBehaviour:
     Class: 0
     Weight: 1.5
     WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 28
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 256
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: barrage
+    Title: "\u041E\u0431\u0441\u0442\u0440\u0435\u043B"
+    Warning: "\u041E\u0431\u0441\u0442\u0440\u0435\u043B \u0432\u043F\u0435\u0440\u0435\u0434\u0438!"
+    Kind: 0
+    Class: 2
+    Weight: 0.55
+    WarningSeconds: 2.5
+    ActiveSeconds: 5
+    ZoneLength: 72
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 1.6
+    Sustain: 1
+    Scale: 2
+    Tags: 130
+    Blocks: 0.35
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: roadblock
+    Title: "\u041F\u0435\u0440\u0435\u043A\u0440\u044B\u0442\u0438\u0435"
+    Warning: "\u0414\u043E\u0440\u043E\u0436\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B \u2014 \u043E\u0431\u044A\u0435\u0437\u0434!"
+    Kind: 0
+    Class: 1
+    Weight: 0.75
+    WarningSeconds: 2
+    ActiveSeconds: 3
+    ZoneLength: 54
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 64
+    Blocks: 0.42
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: boostchain
+    Title: "\u0414\u043E\u0440\u043E\u0436\u043A\u0430 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u044F"
+    Warning: "\u0422\u0440\u0438 \u0443\u0441\u043A\u043E\u0440\u0438\u0442\u0435\u043B\u044F \u043F\u043E\u0434\u0440\u044F\u0434!"
+    Kind: 1
+    Class: 0
+    Weight: 1.3
+    WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 40
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 256
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: debris
+    Title: "\u041E\u0431\u043B\u043E\u043C\u043A\u0438"
+    Warning: "\u041E\u0431\u043B\u043E\u043C\u043A\u0438 \u043F\u0430\u0434\u0430\u044E\u0442!"
+    Kind: 0
+    Class: 2
+    Weight: 0
+    WarningSeconds: 2.5
+    ActiveSeconds: 4
+    ZoneLength: 12
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 0.5
+    Sustain: 1
+    Scale: 1
+    Tags: 130
+    Blocks: 0.4
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: rocketbarrage
+    Title: "\u0420\u0430\u043A\u0435\u0442\u043D\u044B\u0439 \u0443\u0434\u0430\u0440"
+    Warning: "\u0420\u0430\u043A\u0435\u0442\u044B \u043F\u043E \u0434\u043E\u0440\u043E\u0433\u0435!"
+    Kind: 0
+    Class: 2
+    Weight: 0
+    WarningSeconds: 2.5
+    ActiveSeconds: 5
+    ZoneLength: 72
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 1.6
+    Sustain: 1
+    Scale: 2
+    Tags: 130
+    Blocks: 0.35
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: megaballs
+    Title: "\u0428\u0430\u0440\u044B-\u0433\u0438\u0433\u0430\u043D\u0442\u044B"
+    Warning: "\u0428\u0430\u0440\u044B \u043A\u0430\u0442\u044F\u0442\u0441\u044F!"
+    Kind: 0
+    Class: 1
+    Weight: 0.7
+    WarningSeconds: 2.5
+    ActiveSeconds: 6
+    ZoneLength: 60
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 2.4
+    Sustain: 1
+    Scale: 1
+    Tags: 33
+    Blocks: 0.2
+    Overlay: 0
+    Bodies: 5
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: mines
+    Title: "\u041C\u0438\u043D\u043D\u043E\u0435 \u043F\u043E\u043B\u0435"
+    Warning: "\u041C\u0438\u043D\u044B \u043D\u0430 \u0434\u043E\u0440\u043E\u0433\u0435!"
+    Kind: 0
+    Class: 1
+    Weight: 0.7
+    WarningSeconds: 2
+    ActiveSeconds: 4
+    ZoneLength: 46
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 2
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: hammers
+    Title: "\u041C\u043E\u043B\u043E\u0442\u044B"
+    Warning: "\u041C\u043E\u043B\u043E\u0442\u044B \u043A\u0430\u0447\u0430\u044E\u0442\u0441\u044F!"
+    Kind: 0
+    Class: 1
+    Weight: 0.5
+    WarningSeconds: 2
+    ActiveSeconds: 5
+    ZoneLength: 40
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 72
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0.25
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: spinner
+    Title: "\u041A\u0430\u0440\u0443\u0441\u0435\u043B\u044C"
+    Warning: "\u041A\u0430\u0440\u0443\u0441\u0435\u043B\u044C \u043A\u0440\u0443\u0442\u0438\u0442\u0441\u044F!"
+    Kind: 0
+    Class: 1
+    Weight: 0.4
+    WarningSeconds: 2
+    ActiveSeconds: 5
+    ZoneLength: 26
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 8
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0.3
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: rollers
+    Title: "\u0411\u043E\u0447\u043A\u043E\u043F\u0430\u0434"
+    Warning: "\u0411\u043E\u0447\u043A\u0438 \u043A\u0430\u0442\u044F\u0442\u0441\u044F!"
+    Kind: 0
+    Class: 1
+    Weight: 0.5
+    WarningSeconds: 2.5
+    ActiveSeconds: 6
+    ZoneLength: 50
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 2.2
+    Sustain: 1
+    Scale: 1
+    Tags: 35
+    Blocks: 0.25
+    Overlay: 0
+    Bodies: 6
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: walls
+    Title: "\u0414\u0432\u0438\u0433\u0430\u044E\u0449\u0438\u0435\u0441\u044F \u0441\u0442\u0435\u043D\u044B"
+    Warning: "\u0421\u0442\u0435\u043D\u044B \u0441\u0434\u0432\u0438\u0433\u0430\u044E\u0442\u0441\u044F!"
+    Kind: 0
+    Class: 2
+    Weight: 0.45
+    WarningSeconds: 2.5
+    ActiveSeconds: 5
+    ZoneLength: 60
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 2
+    Tags: 72
+    Blocks: 0.66
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0.45
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: kickers
+    Title: "\u0411\u043E\u043A\u0441\u0451\u0440\u0441\u043A\u0438\u0435 \u043F\u0435\u0440\u0447\u0430\u0442\u043A\u0438"
+    Warning: "\u041F\u0435\u0440\u0447\u0430\u0442\u043A\u0438 \u0431\u044C\u044E\u0442!"
+    Kind: 0
+    Class: 1
+    Weight: 0.45
+    WarningSeconds: 2
+    ActiveSeconds: 4
+    ZoneLength: 48
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 8
+    Blocks: 0.3
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: ice
+    Title: "\u041A\u0430\u0442\u043E\u043A"
+    Warning: "\u041B\u0451\u0434 \u043D\u0430 \u0434\u043E\u0440\u043E\u0433\u0435!"
+    Kind: 0
+    Class: 0
+    Weight: 0.5
+    WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 50
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 4
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: jelly
+    Title: "\u0416\u0435\u043B\u0435\u0439\u043D\u0430\u044F \u0434\u043E\u0440\u043E\u0433\u0430"
+    Warning: "\u0414\u043E\u0440\u043E\u0433\u0430-\u0436\u0435\u043B\u0435!"
+    Kind: 0
+    Class: 0
+    Weight: 0.35
+    WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 36
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 20
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: fork
+    Title: "\u0420\u0430\u0437\u0432\u0438\u043B\u043A\u0430"
+    Warning: "\u0420\u0430\u0437\u0432\u0438\u043B\u043A\u0430: \u0432\u044B\u0431\u0438\u0440\u0430\u0439!"
+    Kind: 0
+    Class: 1
+    Weight: 0.35
+    WarningSeconds: 2.5
+    ActiveSeconds: 5
+    ZoneLength: 70
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 2
+    Tags: 322
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0.35
+    MinRoadHalf: 8
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: bigball
+    Title: "\u0428\u0430\u0440-\u043F\u0435\u0440\u0435\u0440\u043E\u0441\u0442\u043E\u043A"
+    Warning: "\u041E\u0413\u0420\u041E\u041C\u041D\u042B\u0419 \u0448\u0430\u0440!"
+    Kind: 0
+    Class: 2
+    Weight: 0.2
+    WarningSeconds: 3
+    ActiveSeconds: 8
+    ZoneLength: 90
+    NeedsStraight: 0
+    Trigger: 1
+    TriggerLead: 3.2
+    Sustain: 1
+    Scale: 2
+    Tags: 33
+    Blocks: 0.5
+    Overlay: 0
+    Bodies: 1
+    MinChaos: 3
+    MinLevel: 0.2
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: bouncers
+    Title: "\u0411\u0430\u0442\u0443\u0442\u044B"
+    Warning: "\u0411\u0430\u0442\u0443\u0442\u044B!"
+    Kind: 1
+    Class: 1
+    Weight: 1.6
+    WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 40
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 16
+    Blocks: 0.25
+    Overlay: 0
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: lowgrav
+    Title: "\u041D\u0435\u0432\u0435\u0441\u043E\u043C\u043E\u0441\u0442\u044C"
+    Warning: "\u041D\u0435\u0432\u0435\u0441\u043E\u043C\u043E\u0441\u0442\u044C!"
+    Kind: 1
+    Class: 1
+    Weight: 1.2
+    WarningSeconds: 1.5
+    ActiveSeconds: 5
+    ZoneLength: 80
+    NeedsStraight: 1
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 2
+    Tags: 16
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0.2
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: shrink
+    Title: "\u041C\u0438\u043D\u0438-\u0432\u043E\u0440\u043E\u0442\u0430"
+    Warning: "\u0412\u043E\u0440\u043E\u0442\u0430-\u0443\u043C\u0435\u043D\u044C\u0448\u0430\u0442\u0435\u043B\u044C!"
+    Kind: 1
+    Class: 0
+    Weight: 1
+    WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 20
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 0
+    Tags: 256
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: rings
+    Title: "\u041A\u043E\u043B\u044C\u0446\u0430-\u0440\u044B\u0432\u043A\u0438"
+    Warning: "\u041A\u043E\u043B\u044C\u0446\u0430 \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u044F!"
+    Kind: 1
+    Class: 0
+    Weight: 1.3
+    WarningSeconds: 1.5
+    ActiveSeconds: 4
+    ZoneLength: 50
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 1
+    Scale: 1
+    Tags: 272
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: spring
+    Title: "\u041F\u0440\u0443\u0436\u0438\u043D\u0430"
+    Warning: "\u041F\u0440\u0443\u0436\u0438\u043D\u0430!"
+    Kind: 1
+    Class: 0
+    Weight: 1.2
+    WarningSeconds: 0.45
+    ActiveSeconds: 1.2
+    ZoneLength: 6
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 16
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 0
+    Copies: 6
+    Spectacle: 0
+  - Id: popmine
+    Title: "\u041C\u0438\u043D\u0430-\u0441\u044E\u0440\u043F\u0440\u0438\u0437"
+    Warning: "\u041F\u0438\u043A-\u043F\u0438\u043A!"
+    Kind: 0
+    Class: 0
+    Weight: 1.3
+    WarningSeconds: 0.4
     ActiveSeconds: 2
-  ModerateInterval: {x: 20, y: 30}
-  ManyInterval: {x: 8, y: 12}
-  StartGrace: 6
+    ZoneLength: 6
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 2
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 1
+    Copies: 6
+    Spectacle: 0
+  - Id: gum
+    Title: "\u0416\u0432\u0430\u0447\u043A\u0430"
+    Warning: "\u0416\u0432\u0430\u0447\u043A\u0430!"
+    Kind: 1
+    Class: 0
+    Weight: 0.8
+    WarningSeconds: 0.4
+    ActiveSeconds: 4
+    ZoneLength: 8
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 4
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 1
+    Copies: 4
+    Spectacle: 0
+  - Id: oil
+    Title: "\u041C\u0430\u0441\u043B\u044F\u043D\u043E\u0435 \u043F\u044F\u0442\u043D\u043E"
+    Warning: "\u041C\u0430\u0441\u043B\u043E!"
+    Kind: 0
+    Class: 0
+    Weight: 0.8
+    WarningSeconds: 0.4
+    ActiveSeconds: 4
+    ZoneLength: 10
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 4
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 1
+    Copies: 4
+    Spectacle: 0
+  - Id: crazy
+    Title: "\u0411\u0435\u0437\u0443\u043C\u043D\u044B\u0439 \u0440\u0443\u043B\u044C"
+    Warning: "\u0427\u0442\u043E \u0441 \u0440\u0443\u043B\u0451\u043C?!"
+    Kind: 0
+    Class: 0
+    Weight: 0.5
+    WarningSeconds: 0.3
+    ActiveSeconds: 3.2
+    ZoneLength: 4
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 0
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 4
+    Copies: 6
+    Spectacle: 0
+  - Id: hand
+    Title: "\u0413\u0438\u0433\u0430\u043D\u0442\u0441\u043A\u0430\u044F \u0440\u0443\u043A\u0430"
+    Warning: "\u0420\u0443\u043A\u0430!"
+    Kind: 0
+    Class: 1
+    Weight: 1.1
+    WarningSeconds: 0.6
+    ActiveSeconds: 1.4
+    ZoneLength: 14
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 8
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 2
+    Copies: 4
+    Spectacle: 0
+  - Id: mallet
+    Title: "\u041A\u0443\u0432\u0430\u043B\u0434\u0430"
+    Warning: "\u041A\u0443\u0432\u0430\u043B\u0434\u0430!"
+    Kind: 0
+    Class: 1
+    Weight: 1.1
+    WarningSeconds: 0.65
+    ActiveSeconds: 1.6
+    ZoneLength: 10
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 24
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 2
+    Copies: 4
+    Spectacle: 0
+  - Id: anvil
+    Title: "\u041D\u0430\u043A\u043E\u0432\u0430\u043B\u044C\u043D\u044F"
+    Warning: "\u0421\u0432\u0435\u0440\u0445\u0443!"
+    Kind: 0
+    Class: 1
+    Weight: 0.9
+    WarningSeconds: 0.9
+    ActiveSeconds: 3
+    ZoneLength: 8
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 128
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 0
+    Copies: 4
+    Spectacle: 0
+  - Id: fan
+    Title: "\u0412\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440"
+    Warning: "\u0423\u0440\u0430\u0433\u0430\u043D-\u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440!"
+    Kind: 0
+    Class: 1
+    Weight: 0.8
+    WarningSeconds: 0.6
+    ActiveSeconds: 3
+    ZoneLength: 34
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 0
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 2
+    Copies: 3
+    Spectacle: 0
+  - Id: magnet
+    Title: "\u041C\u0430\u0433\u043D\u0438\u0442"
+    Warning: "\u041C\u0430\u0433\u043D\u0438\u0442!"
+    Kind: 0
+    Class: 1
+    Weight: 0.8
+    WarningSeconds: 0.7
+    ActiveSeconds: 3.2
+    ZoneLength: 24
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 128
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 3
+    Copies: 3
+    Spectacle: 0
+  - Id: gravflip
+    Title: "\u0413\u0440\u0430\u0432\u0438\u0442\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u0441\u0431\u043E\u0439"
+    Warning: "\u0413\u0440\u0430\u0432\u0438\u0442\u0430\u0446\u0438\u044F \u0441\u0431\u043E\u0438\u0442!"
+    Kind: 0
+    Class: 1
+    Weight: 0.7
+    WarningSeconds: 0.5
+    ActiveSeconds: 1.8
+    ZoneLength: 30
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 16
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 4
+    Copies: 3
+    Spectacle: 0
+  - Id: ducks
+    Title: "\u0423\u0442\u0438\u043D\u044B\u0439 \u0434\u043E\u0436\u0434\u044C"
+    Warning: "\u0423\u0442\u043A\u0438!"
+    Kind: 0
+    Class: 1
+    Weight: 0.8
+    WarningSeconds: 0.6
+    ActiveSeconds: 6
+    ZoneLength: 30
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 161
+    Blocks: 0
+    Overlay: 1
+    Bodies: 5
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 3
+    Copies: 3
+    Spectacle: 0
+  - Id: cannon
+    Title: "\u041F\u0443\u0448\u043A\u0430"
+    Warning: "\u041F\u0443\u0448\u043A\u0430!"
+    Kind: 0
+    Class: 1
+    Weight: 0.8
+    WarningSeconds: 0.8
+    ActiveSeconds: 3
+    ZoneLength: 14
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 35
+    Blocks: 0
+    Overlay: 1
+    Bodies: 1
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 2
+    Copies: 3
+    Spectacle: 0
+  - Id: ufo
+    Title: "\u041D\u041B\u041E"
+    Warning: "\u041D\u041B\u041E!"
+    Kind: 0
+    Class: 1
+    Weight: 0.6
+    WarningSeconds: 1.2
+    ActiveSeconds: 3.6
+    ZoneLength: 12
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 144
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 2
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 4
+    Copies: 3
+    Spectacle: 0
+  - Id: tornado
+    Title: "\u0421\u043C\u0435\u0440\u0447"
+    Warning: "\u0421\u043C\u0435\u0440\u0447!"
+    Kind: 0
+    Class: 1
+    Weight: 0.6
+    WarningSeconds: 0.8
+    ActiveSeconds: 4
+    ZoneLength: 26
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 0
+    Tags: 24
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 3
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 1
+    Place: 1
+    Copies: 3
+    Spectacle: 0
+  - Id: verity
+    Title: "\u0412\u0415\u0420\u0418\u0422\u0418"
+    Warning: "\u0412\u0435\u0440\u0438\u0442\u0438 \u043F\u0440\u044B\u0433\u0430\u0435\u0442!"
+    Kind: 0
+    Class: 1
+    Weight: 1
+    WarningSeconds: 1.6
+    ActiveSeconds: 15
+    ZoneLength: 60
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 0.4
+    Sustain: 0
+    Scale: 2
+    Tags: 24
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 1
+    Spectacle: 1
+  - Id: eldrifto
+    Title: EL DRIFTO BUS
+    Warning: EL DRIFTO!
+    Kind: 0
+    Class: 1
+    Weight: 1
+    WarningSeconds: 2.2
+    ActiveSeconds: 14
+    ZoneLength: 70
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1
+    Sustain: 0
+    Scale: 2
+    Tags: 40
+    Blocks: 0
+    Overlay: 1
+    Bodies: 1
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 1
+    Spectacle: 1
+  - Id: hypergamy
+    Title: "\u0413\u0418\u041F\u0415\u0420\u0413\u0410\u041C\u0418\u042F"
+    Warning: "\u041D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443!"
+    Kind: 0
+    Class: 0
+    Weight: 1
+    WarningSeconds: 1.5
+    ActiveSeconds: 8
+    ZoneLength: 30
+    NeedsStraight: 0
+    Trigger: 0
+    TriggerLead: 1.5
+    Sustain: 1
+    Scale: 2
+    Tags: 0
+    Blocks: 0
+    Overlay: 1
+    Bodies: 0
+    MinChaos: 1
+    MinLevel: 0
+    MinRoadHalf: 0
+    Gag: 0
+    Place: 0
+    Copies: 1
+    Spectacle: 1
+  Version: 7
+  ModerateInterval: {x: 6.5, y: 8.5}
+  ManyInterval: {x: 3.2, y: 4.4}
+  MayhemInterval: {x: 1.8, y: 2.6}
+  AbsurdInterval: {x: 0.9, y: 1.4}
+  ModerateMaxActive: 3
+  ManyMaxActive: 5
+  MayhemMaxActive: 8
+  AbsurdMaxActive: 14
+  ModerateMaxBodies: 10
+  ManyMaxBodies: 20
+  MayhemMaxBodies: 36
+  AbsurdMaxBodies: 60
+  ModerateGagInterval: {x: 4, y: 6}
+  ManyGagInterval: {x: 1, y: 1.6}
+  MayhemGagInterval: {x: 0.7, y: 1.1}
+  AbsurdGagInterval: {x: 0.22, y: 0.42}
+  ModerateMaxGags: 2
+  ManyMaxGags: 6
+  MayhemMaxGags: 8
+  AbsurdMaxGags: 22
+  ModerateSpectacleInterval: {x: 45, y: 60}
+  ManySpectacleInterval: {x: 34, y: 46}
+  MayhemSpectacleInterval: {x: 26, y: 38}
+  AbsurdSpectacleInterval: {x: 13, y: 19}
+  ModerateSpectacleFirst: 15
+  ManySpectacleFirst: 12
+  SpectacleFirst: 9
+  AbsurdSpectacleFirst: 6
+  StartGrace: 3
+  ChaosStartGrace: 0.5

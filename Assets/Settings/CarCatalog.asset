@@ -1,0 +1,533 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6982b3e8c512e4e4984351d2f7ea8283, type: 3}
+  m_Name: CarCatalog
+  m_EditorClassIdentifier: RandomCar::RandomCar.Car.CarCatalog
+  Cars:
+  - Key: Iskra
+    DisplayName: "\u0418\u0441\u043A\u0440\u0430"
+    Prefab: {fileID: 2035208552033503114, guid: 9d3fbd6fe315b754d8a3c8d7d47d2536, type: 3}
+    Spec: {fileID: 11400000, guid: b8a848f1c2759d14cb2d93263a6ee291, type: 2}
+    Class: 1
+    Price: 0
+    Unlock: 
+    DefaultColor: {r: 0.8862745, g: 0.2509804, b: 0.12156863, a: 1}
+    DefaultFinish: 1
+  - Key: Kometa
+    DisplayName: "\u041A\u043E\u043C\u0435\u0442\u0430"
+    Prefab: {fileID: 5181601189051518698, guid: 773b8a45f85ba33409f7f74d60ddf856, type: 3}
+    Spec: {fileID: 11400000, guid: 90b371d46af6c024198871e00c7e37ae, type: 2}
+    Class: 2
+    Price: 0
+    Unlock: 
+    DefaultColor: {r: 0.12156863, g: 0.30980393, b: 0.84705883, a: 1}
+    DefaultFinish: 1
+  - Key: Pchelka
+    DisplayName: "\u041F\u0447\u0451\u043B\u043A\u0430"
+    Prefab: {fileID: 3755949265424819237, guid: c9f89f1ce33b55346bf395ef57c3db64, type: 3}
+    Spec: {fileID: 11400000, guid: a489d13b3ee5155419f2aaf1bdfb8c83, type: 2}
+    Class: 4
+    Price: 0
+    Unlock: 
+    DefaultColor: {r: 1, g: 0.7607843, b: 0.101960786, a: 1}
+    DefaultFinish: 1
+  - Key: Myata
+    DisplayName: "\u041C\u044F\u0442\u0430"
+    Prefab: {fileID: 6909824129586185799, guid: 2772d36b45820fd4db159f7f00da1f88, type: 3}
+    Spec: {fileID: 11400000, guid: 2a490e24aa48a9b47bfb84533d9ec404, type: 2}
+    Class: 0
+    Price: 0
+    Unlock: 
+    DefaultColor: {r: 0.1764706, g: 0.83137256, b: 0.627451, a: 1}
+    DefaultFinish: 1
+  - Key: Bastion
+    DisplayName: "\u0411\u0430\u0441\u0442\u0438\u043E\u043D"
+    Prefab: {fileID: 6133413141593988937, guid: 1f00f61baf66f2b44873035f6d5b3bc7, type: 3}
+    Spec: {fileID: 11400000, guid: 91f2fb29636845b4bae421fbd0628604, type: 2}
+    Class: 6
+    Price: 42000
+    Unlock: 
+    DefaultColor: {r: 0.101960786, g: 0.10980392, b: 0.1254902, a: 1}
+    DefaultFinish: 1
+  - Key: Bizon
+    DisplayName: "\u0411\u0438\u0437\u043E\u043D"
+    Prefab: {fileID: 10364663293656867, guid: c33e34a61bae4404eab9920e6183403f, type: 3}
+    Spec: {fileID: 11400000, guid: ef037a2072f176849b86547a7a6a616e, type: 2}
+    Class: 3
+    Price: 30000
+    Unlock: 
+    DefaultColor: {r: 0.9490196, g: 0.69803923, b: 0.101960786, a: 1}
+    DefaultFinish: 1
+  - Key: Taiga
+    DisplayName: "\u0422\u0430\u0439\u0433\u0430"
+    Prefab: {fileID: 816478057313800666, guid: 13a43f9bc28249241abe261fd512fa25, type: 3}
+    Spec: {fileID: 11400000, guid: 9ec5333d9341e124d93616effb0dde62, type: 2}
+    Class: 5
+    Price: 36000
+    Unlock: 
+    DefaultColor: {r: 0.36862746, g: 0.41960785, b: 0.22745098, a: 1}
+    DefaultFinish: 1
+  - Key: Lastochka
+    DisplayName: "\u041B\u0430\u0441\u0442\u043E\u0447\u043A\u0430"
+    Prefab: {fileID: 812491724399353123, guid: d621c6ed1026bcf4db71a95d58094f28, type: 3}
+    Spec: {fileID: 11400000, guid: ab8a513dcd8015f469de0cf6fdcf67bc, type: 2}
+    Class: 9
+    Price: 25000
+    Unlock: wins:3
+    DefaultColor: {r: 0.49803922, g: 0.72156864, b: 0.84705883, a: 1}
+    DefaultFinish: 1
+  - Key: Grom
+    DisplayName: "\u0413\u0440\u043E\u043C"
+    Prefab: {fileID: 5409441240785249093, guid: 36d11f87547dce249b957e2d91838ac7, type: 3}
+    Spec: {fileID: 11400000, guid: b9cd11035252a094a822332a3b303833, type: 2}
+    Class: 7
+    Price: 85000
+    Unlock: races:5
+    DefaultColor: {r: 0.6509804, g: 0.8862745, b: 0.22745098, a: 1}
+    DefaultFinish: 1
+  - Key: Sapsan
+    DisplayName: "\u0421\u0430\u043F\u0441\u0430\u043D"
+    Prefab: {fileID: 5838637172322323091, guid: 34b861583b17c2141b1c8d864df520dd, type: 3}
+    Spec: {fileID: 11400000, guid: ea60efd3e5dc67b4399df40bfb4aeee9, type: 2}
+    Class: 8
+    Price: 140000
+    Unlock: wins:5
+    DefaultColor: {r: 0.9490196, g: 0.9411765, b: 0.9098039, a: 1}
+    DefaultFinish: 1
+  Parts:
+  - Slot: 0
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u043E\u0439 \u0431\u0430\u043C\u043F\u0435\u0440"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 0
+    Variant: Sport
+    Name: "\u0421\u043F\u043E\u0440\u0442\u0438\u0432\u043D\u044B\u0439 \u0431\u0430\u043C\u043F\u0435\u0440"
+    Description: "\u0413\u0443\u0431\u0430 \u0441\u043F\u043B\u0438\u0442\u0442\u0435\u0440\u0430 \u0438 \u043A\u043B\u044B\u043A\u0438 \u043F\u043E \u0443\u0433\u043B\u0430\u043C."
+    Price: 2500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 0
+    Variant: Race
+    Name: "\u0413\u043E\u043D\u043E\u0447\u043D\u044B\u0439 \u0431\u0430\u043C\u043F\u0435\u0440"
+    Description: "\u041A\u0430\u0440\u0431\u043E\u043D\u043E\u0432\u044B\u0439 \u0441\u043F\u043B\u0438\u0442\u0442\u0435\u0440 \u0441 \u0442\u043E\u0440\u0446\u0435\u0432\u044B\u043C\u0438 \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u0430\u043C\u0438 \u0438 \u043A\u0430\u043D\u0430\u0440\u0434\u0430\u043C\u0438."
+    Price: 4800
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 0
+    Variant: Offroad
+    Name: "\u0421\u0438\u043B\u043E\u0432\u043E\u0439 \u0431\u0430\u043C\u043F\u0435\u0440"
+    Description: "\u0421\u0442\u0430\u043B\u044C\u043D\u043E\u0439 \u0431\u0440\u0443\u0441, \u043B\u0435\u0431\u0451\u0434\u043A\u0430, \u0437\u0430\u0449\u0438\u0442\u0430 \u0438 \u0442\u0430\u043A\u0435\u043B\u0430\u0436\u043D\u044B\u0435 \u0441\u043A\u043E\u0431\u044B."
+    Price: 4200
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 1
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u043E\u0439 \u0431\u0430\u043C\u043F\u0435\u0440"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 1
+    Variant: Diffuser
+    Name: "\u0414\u0438\u0444\u0444\u0443\u0437\u043E\u0440"
+    Description: "\u041A\u0430\u0440\u0431\u043E\u043D\u043E\u0432\u044B\u0439 \u0434\u0438\u0444\u0444\u0443\u0437\u043E\u0440 \u0441 \u0440\u0451\u0431\u0440\u0430\u043C\u0438 \u0438 \u0441\u0442\u043E\u043F-\u0441\u0438\u0433\u043D\u0430\u043B\u043E\u043C."
+    Price: 3000
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 1
+    Variant: Offroad
+    Name: "\u0421\u0438\u043B\u043E\u0432\u043E\u0439 \u0431\u0430\u043C\u043F\u0435\u0440"
+    Description: "\u0421\u0442\u0430\u043B\u044C\u043D\u043E\u0439 \u0431\u0440\u0443\u0441 \u0441 \u0444\u0430\u0440\u043A\u043E\u043F\u043E\u043C."
+    Price: 3500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 2
+    Variant: Stock
+    Name: "\u0411\u0435\u0437 \u043F\u043E\u0440\u043E\u0433\u043E\u0432"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 2
+    Variant: Sport
+    Name: "\u0421\u043F\u043E\u0440\u0442\u0438\u0432\u043D\u044B\u0435 \u043F\u043E\u0440\u043E\u0433\u0438"
+    Description: "\u0427\u0451\u0440\u043D\u044B\u0435 \u043B\u0435\u0437\u0432\u0438\u044F \u0432\u0434\u043E\u043B\u044C \u043F\u043E\u0440\u043E\u0433\u043E\u0432."
+    Price: 1800
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 2
+    Variant: Sliders
+    Name: "\u0417\u0430\u0449\u0438\u0442\u043D\u044B\u0435 \u0442\u0440\u0443\u0431\u044B"
+    Description: "\u0421\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0442\u0440\u0443\u0431\u044B \u0432\u0434\u043E\u043B\u044C \u043F\u043E\u0440\u043E\u0433\u043E\u0432."
+    Price: 2200
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 3
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0438\u0435 \u0430\u0440\u043A\u0438"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 3
+    Variant: Wide
+    Name: "\u0420\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u0435\u043B\u0438 \u0441 \u0437\u0430\u043A\u043B\u0451\u043F\u043A\u0430\u043C\u0438"
+    Description: "\u041D\u0430\u043A\u043B\u0430\u0434\u043A\u0438 \u043D\u0430 \u0430\u0440\u043A\u0438 \u0432 \u0446\u0432\u0435\u0442 \u043A\u0443\u0437\u043E\u0432\u0430."
+    Price: 3800
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 3
+    Variant: Offroad
+    Name: "\u0412\u043D\u0435\u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0435 \u0440\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u0435\u043B\u0438"
+    Description: "\u0428\u0438\u0440\u043E\u043A\u0438\u0435 \u043F\u043B\u0430\u0441\u0442\u0438\u043A\u043E\u0432\u044B\u0435 \u043D\u0430\u043A\u043B\u0430\u0434\u043A\u0438."
+    Price: 3000
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 4
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u043E\u0439 \u043A\u0430\u043F\u043E\u0442"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 4
+    Variant: Vents
+    Name: "\u041A\u0430\u043F\u043E\u0442 \u0441 \u0436\u0430\u0431\u0440\u0430\u043C\u0438"
+    Description: "\u0414\u0432\u0435 \u0440\u0435\u0448\u0451\u0442\u043A\u0438 \u0432\u044B\u0432\u043E\u0434\u0430 \u0432\u043E\u0437\u0434\u0443\u0445\u0430."
+    Price: 2400
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 4
+    Variant: Scoop
+    Name: "\u041A\u0430\u043F\u043E\u0442 \u0441 \u0432\u043E\u0437\u0434\u0443\u0445\u043E\u0437\u0430\u0431\u043E\u0440\u043D\u0438\u043A\u043E\u043C"
+    Description: "\u0412\u044B\u043F\u0443\u043A\u043B\u044B\u0439 \u0437\u0430\u0431\u043E\u0440\u043D\u0438\u043A \u043F\u043E\u0441\u0435\u0440\u0435\u0434\u0438\u043D\u0435."
+    Price: 2800
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 4
+    Variant: Carbon
+    Name: "\u041A\u0430\u0440\u0431\u043E\u043D\u043E\u0432\u044B\u0439 \u043A\u0430\u043F\u043E\u0442"
+    Description: "\u041D\u0430\u043A\u043B\u0430\u0434\u043A\u0430 \u0438\u0437 \u0443\u0433\u043B\u0435\u043F\u043B\u0430\u0441\u0442\u0438\u043A\u0430."
+    Price: 4500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 5
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0430\u044F \u0440\u0435\u0448\u0451\u0442\u043A\u0430"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 5
+    Variant: Mesh
+    Name: "\u0421\u043E\u0442\u043E\u0432\u0430\u044F \u0440\u0435\u0448\u0451\u0442\u043A\u0430"
+    Description: "\u041C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u0441\u0435\u0442\u043A\u0430-\u0441\u043E\u0442\u044B."
+    Price: 1200
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 5
+    Variant: Bars
+    Name: "\u0425\u0440\u043E\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u043F\u043B\u0430\u043D\u043A\u0438"
+    Description: "\u0413\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u043B\u0430\u043D\u043A\u0438."
+    Price: 1400
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 7
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0438\u0435 \u0437\u0435\u0440\u043A\u0430\u043B\u0430"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 7
+    Variant: Aero
+    Name: "\u0413\u043E\u043D\u043E\u0447\u043D\u044B\u0435 \u0437\u0435\u0440\u043A\u0430\u043B\u0430"
+    Description: "\u041A\u0430\u0440\u0431\u043E\u043D\u043E\u0432\u044B\u0435 \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u043D\u0430 \u0442\u043E\u043D\u043A\u0438\u0445 \u043D\u043E\u0436\u043A\u0430\u0445."
+    Price: 900
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 8
+    Variant: Stock
+    Name: "\u0411\u0435\u0437 \u0431\u0430\u0433\u0430\u0436\u043D\u0438\u043A\u0430"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 8
+    Variant: Rails
+    Name: "\u0420\u0435\u0439\u043B\u0438\u043D\u0433\u0438"
+    Description: "\u041F\u0440\u043E\u0434\u043E\u043B\u044C\u043D\u044B\u0435 \u0445\u0440\u043E\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u0440\u0435\u0439\u043B\u0438\u043D\u0433\u0438."
+    Price: 1200
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 8
+    Variant: Rack
+    Name: "\u041F\u043E\u043F\u0435\u0440\u0435\u0447\u0438\u043D\u044B"
+    Description: "\u0420\u0435\u0439\u043B\u0438\u043D\u0433\u0438 \u0441 \u0442\u0440\u0435\u043C\u044F \u043F\u043E\u043F\u0435\u0440\u0435\u0447\u0438\u043D\u0430\u043C\u0438."
+    Price: 1600
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 8
+    Variant: Expedition
+    Name: "\u042D\u043A\u0441\u043F\u0435\u0434\u0438\u0446\u0438\u043E\u043D\u043D\u044B\u0439 \u0431\u0430\u0433\u0430\u0436\u043D\u0438\u043A"
+    Description: "\u041A\u043E\u0440\u0437\u0438\u043D\u0430 \u0441 \u043A\u0430\u043D\u0438\u0441\u0442\u0440\u0430\u043C\u0438, \u044F\u0449\u0438\u043A\u043E\u043C \u0438 \u0437\u0430\u043F\u0430\u0441\u043A\u043E\u0439."
+    Price: 5200
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 8
+    Variant: Lightbar
+    Name: "\u0421\u0432\u0435\u0442\u043E\u0434\u0438\u043E\u0434\u043D\u0430\u044F \u043B\u044E\u0441\u0442\u0440\u0430"
+    Description: "\u0414\u043B\u0438\u043D\u043D\u0430\u044F \u0444\u0430\u0440\u0430 \u043D\u0430\u0434 \u043B\u043E\u0431\u043E\u0432\u044B\u043C \u0441\u0442\u0435\u043A\u043B\u043E\u043C."
+    Price: 2400
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 8
+    Variant: Scoop
+    Name: "\u0412\u043E\u0437\u0434\u0443\u0445\u043E\u0437\u0430\u0431\u043E\u0440\u043D\u0438\u043A \u043D\u0430 \u043A\u0440\u044B\u0448\u0435"
+    Description: "\u0420\u0430\u043B\u043B\u0438\u0439\u043D\u044B\u0439 \u0437\u0430\u0431\u043E\u0440\u043D\u0438\u043A \u0434\u043B\u044F \u0441\u0430\u043B\u043E\u043D\u0430."
+    Price: 1500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 9
+    Variant: Stock
+    Name: "\u0411\u0435\u0437 \u0437\u0430\u0449\u0438\u0442\u044B"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 9
+    Variant: Bullbar
+    Name: "\u041A\u0435\u043D\u0433\u0443\u0440\u044F\u0442\u043D\u0438\u043A"
+    Description: "\u0422\u0440\u0443\u0431\u0447\u0430\u0442\u0430\u044F \u0437\u0430\u0449\u0438\u0442\u0430 \u043F\u0435\u0440\u0435\u0434 \u0440\u0435\u0448\u0451\u0442\u043A\u043E\u0439."
+    Price: 2600
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 6
+    Variant: Stock
+    Name: "\u0411\u0435\u0437 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E \u0441\u0432\u0435\u0442\u0430"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 6
+    Variant: Rally
+    Name: "\u0420\u0430\u043B\u043B\u0438\u0439\u043D\u0430\u044F \u043B\u044E\u0441\u0442\u0440\u0430"
+    Description: "\u0427\u0435\u0442\u044B\u0440\u0435 \u043A\u0440\u0443\u0433\u043B\u044B\u0435 \u0444\u0430\u0440\u044B \u043D\u0430 \u043A\u0440\u043E\u043D\u0448\u0442\u0435\u0439\u043D\u0435."
+    Price: 2600
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 6
+    Variant: Pods
+    Name: "\u041F\u0440\u043E\u0442\u0438\u0432\u043E\u0442\u0443\u043C\u0430\u043D\u043D\u044B\u0435 \u0444\u0430\u0440\u044B"
+    Description: "\u0414\u0432\u0435 \u0444\u0430\u0440\u044B \u043D\u0430 \u0431\u0430\u043C\u043F\u0435\u0440\u0435."
+    Price: 1600
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Stock
+    Name: "\u0411\u0435\u0437 \u0441\u043F\u043E\u0439\u043B\u0435\u0440\u0430"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Lip
+    Name: "\u0413\u0443\u0431\u0430 \u043D\u0430 \u0431\u0430\u0433\u0430\u0436\u043D\u0438\u043A\u0435"
+    Description: "\u0422\u043E\u043D\u043A\u0438\u0439 \u0441\u043F\u043E\u0439\u043B\u0435\u0440 \u043F\u043E \u043A\u0440\u043E\u043C\u043A\u0435 \u0431\u0430\u0433\u0430\u0436\u043D\u0438\u043A\u0430."
+    Price: 1500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Ducktail
+    Name: "\u0423\u0442\u0438\u043D\u044B\u0439 \u0445\u0432\u043E\u0441\u0442"
+    Description: "\u041F\u0440\u0438\u043F\u043E\u0434\u043D\u044F\u0442\u0430\u044F \u043A\u0440\u043E\u043C\u043A\u0430 \u0431\u0430\u0433\u0430\u0436\u043D\u0438\u043A\u0430."
+    Price: 2200
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Wing
+    Name: "\u0410\u043D\u0442\u0438\u043A\u0440\u044B\u043B\u043E GT"
+    Description: "\u041A\u0430\u0440\u0431\u043E\u043D\u043E\u0432\u043E\u0435 \u043A\u0440\u044B\u043B\u043E \u043D\u0430 \u0441\u0442\u043E\u0439\u043A\u0430\u0445."
+    Price: 4500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Swan
+    Name: "\u041A\u0440\u044B\u043B\u043E \u043D\u0430 \xAB\u043B\u0435\u0431\u0435\u0434\u0438\u043D\u044B\u0445 \u0448\u0435\u044F\u0445\xBB"
+    Description: "\u041A\u0440\u0443\u043F\u043D\u043E\u0435 \u043A\u0440\u044B\u043B\u043E \u0441 \u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435\u043C \u0441\u0432\u0435\u0440\u0445\u0443."
+    Price: 6500
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Roof
+    Name: "\u041A\u043E\u0437\u044B\u0440\u0451\u043A \u043D\u0430 \u043A\u0440\u044B\u0448\u0435"
+    Description: "\u0421\u043F\u043E\u0439\u043B\u0435\u0440 \u043D\u0430\u0434 \u0437\u0430\u0434\u043D\u0438\u043C \u0441\u0442\u0435\u043A\u043B\u043E\u043C."
+    Price: 1800
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 10
+    Variant: Rally
+    Name: "\u0420\u0430\u043B\u043B\u0438\u0439\u043D\u043E\u0435 \u043A\u0440\u044B\u043B\u043E"
+    Description: "\u0411\u043E\u043B\u044C\u0448\u043E\u0435 \u043A\u0440\u044B\u043B\u043E \u043D\u0430 \u0437\u0430\u0434\u043D\u0435\u0439 \u043A\u0440\u043E\u043C\u043A\u0435 \u043A\u0440\u044B\u0448\u0438."
+    Price: 3600
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 11
+    Variant: Stock
+    Name: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0438\u0435 \u0434\u0438\u0441\u043A\u0438"
+    Description: 
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 11
+    Variant: Five
+    Name: "\u041F\u044F\u0442\u044C \u0441\u043F\u0438\u0446"
+    Description: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430 \u0441\u043F\u043E\u0440\u0442\u0438\u0432\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D."
+    Price: 2000
+    Prefab: {fileID: 919132149155446097, guid: 5eadffea0b5ed2b468fbe2739e954f07, type: 3}
+    Classes: 000000000100000002000000030000000400000007000000080000000900000006000000i
+  - Slot: 11
+    Variant: Ten
+    Name: "\u0414\u0435\u0441\u044F\u0442\u044C \u0441\u043F\u0438\u0446"
+    Description: "\u0422\u043E\u043D\u043A\u0438\u0435 \u0441\u043F\u0438\u0446\u044B, \u043B\u0451\u0433\u043A\u0438\u0439 \u0432\u0438\u0434."
+    Price: 2400
+    Prefab: {fileID: 919132149155446097, guid: c8bd73ea4fd9a53458aca68e413f6cc1, type: 3}
+    Classes: 000000000100000002000000030000000400000007000000080000000900000006000000i
+  - Slot: 11
+    Variant: Six
+    Name: "\u0428\u0435\u0441\u0442\u044C \u0441\u043F\u0438\u0446"
+    Description: "\u041A\u0440\u0435\u043F\u043A\u0438\u0435 \u0448\u0438\u0440\u043E\u043A\u0438\u0435 \u0441\u043F\u0438\u0446\u044B."
+    Price: 2000
+    Prefab: {fileID: 919132149155446097, guid: 950ad6585ed53b84191952cb93df0943, type: 3}
+    Classes: 
+  - Slot: 11
+    Variant: Split
+    Name: "\u0421\u0434\u0432\u043E\u0435\u043D\u043D\u044B\u0435 \u0441\u043F\u0438\u0446\u044B"
+    Description: "\u041F\u044F\u0442\u044C \u043F\u0430\u0440 \u0442\u043E\u043D\u043A\u0438\u0445 \u0441\u043F\u0438\u0446."
+    Price: 2800
+    Prefab: {fileID: 919132149155446097, guid: 5ba434c18bb1dd7479d215b5a615e89b, type: 3}
+    Classes: 000000000100000002000000030000000400000007000000080000000900000006000000i
+  - Slot: 11
+    Variant: Multi
+    Name: "\u041C\u043D\u043E\u0433\u043E\u0441\u043F\u0438\u0446\u0435\u0432\u044B\u0435"
+    Description: "\u0414\u0432\u0430\u0434\u0446\u0430\u0442\u044C \u0441\u043F\u0438\u0446 \u0441 \u0437\u0430\u043A\u0440\u0443\u0442\u043A\u043E\u0439."
+    Price: 3200
+    Prefab: {fileID: 919132149155446097, guid: 3a37acf4c1d76bc478934b8c61835e53, type: 3}
+    Classes: 000000000100000002000000030000000400000007000000080000000900000006000000i
+  - Slot: 11
+    Variant: Turbofan
+    Name: "\u0422\u0443\u0440\u0431\u0438\u043D\u0430"
+    Description: "\u0421\u043F\u043B\u043E\u0448\u043D\u043E\u0439 \u0434\u0438\u0441\u043A \u0441 \u043B\u043E\u043F\u0430\u0442\u043A\u0430\u043C\u0438."
+    Price: 3000
+    Prefab: {fileID: 919132149155446097, guid: a73aec7101885b04fb1b22f029bb793a, type: 3}
+    Classes: 000000000100000002000000030000000400000007000000080000000900000006000000i
+  - Slot: 11
+    Variant: Dish
+    Name: "\u0420\u0435\u0442\u0440\u043E-\u043A\u043E\u043B\u043F\u0430\u043A"
+    Description: "\u041F\u043B\u043E\u0441\u043A\u0438\u0439 \u0434\u0438\u0441\u043A \u0441 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u044F\u043C\u0438."
+    Price: 1800
+    Prefab: {fileID: 919132149155446097, guid: 906087532ba33ef4780b5258404198c5, type: 3}
+    Classes: 
+  - Slot: 11
+    Variant: Mesh
+    Name: "\u0421\u0435\u0442\u043A\u0430"
+    Description: "\u041F\u0435\u0440\u0435\u043A\u0440\u0451\u0441\u0442\u043D\u044B\u0435 \u0441\u043F\u0438\u0446\u044B \u0438 \u0445\u0440\u043E\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 \u043E\u0431\u043E\u0434."
+    Price: 3400
+    Prefab: {fileID: 919132149155446097, guid: da7bba168802fda468bb49ae40b818b3, type: 3}
+    Classes: 000000000100000002000000030000000400000007000000080000000900000006000000i
+  - Slot: 11
+    Variant: Beadlock
+    Name: "\u0411\u044D\u0434\u043B\u043E\u043A"
+    Description: "\u0412\u043D\u0435\u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0439 \u0434\u0438\u0441\u043A \u0441 \u0431\u043E\u043B\u0442\u043E\u0432\u044B\u043C \u043A\u043E\u043B\u044C\u0446\u043E\u043C."
+    Price: 3000
+    Prefab: {fileID: 919132149155446097, guid: 6f6fc3e8fdc3db144b7796ca2d09c8a7, type: 3}
+    Classes: 0400000005000000060000000000000009000000i
+  - Slot: 11
+    Variant: Steel
+    Name: "\u0428\u0442\u0430\u043C\u043F\u043E\u0432\u0430\u043D\u043D\u044B\u0435"
+    Description: "\u041F\u0440\u043E\u0441\u0442\u044B\u0435 \u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u0434\u0438\u0441\u043A\u0438."
+    Price: 900
+    Prefab: {fileID: 919132149155446097, guid: 790fd737926feda459d222548bab90f0, type: 3}
+    Classes: 0400000005000000060000000000000009000000i
+  - Slot: 12
+    Variant: Stock
+    Name: "\u0414\u043E\u0440\u043E\u0436\u043D\u044B\u0435 \u0448\u0438\u043D\u044B"
+    Description: "\u0417\u0430\u0432\u043E\u0434\u0441\u043A\u0438\u0435 \u0448\u0438\u043D\u044B: \u0441\u0446\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u0431\u0435\u0437 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0439."
+    Price: 0
+    Prefab: {fileID: 0}
+    Classes: 
+  - Slot: 12
+    Variant: Sport
+    Name: "\u0421\u043F\u043E\u0440\u0442\u0438\u0432\u043D\u044B\u0435 \u0448\u0438\u043D\u044B"
+    Description: "\u041D\u0438\u0437\u043A\u0438\u0439 \u043F\u0440\u043E\u0444\u0438\u043B\u044C, \u0434\u0438\u0441\u043A\u0438 \u043A\u0440\u0443\u043F\u043D\u0435\u0435. \u0410\u0441\u0444\u0430\u043B\u044C\u0442 +5 %, \u0440\u044B\u0445\u043B\u043E\u0435 \u043F\u043E\u043A\u0440\u044B\u0442\u0438\u0435 \u221212 %."
+    Price: 3000
+    Prefab: {fileID: 0}
+    Classes: 0000000001000000020000000300000004000000070000000800000009000000i
+  - Slot: 12
+    Variant: Offroad
+    Name: "\u0412\u043D\u0435\u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0435 \u0448\u0438\u043D\u044B"
+    Description: "\u0413\u0440\u0443\u0431\u044B\u0439 \u043F\u0440\u043E\u0442\u0435\u043A\u0442\u043E\u0440, \u0432\u044B\u0441\u043E\u043A\u0438\u0439 \u043F\u0440\u043E\u0444\u0438\u043B\u044C. \u0410\u0441\u0444\u0430\u043B\u044C\u0442 \u22127 %, \u0440\u044B\u0445\u043B\u043E\u0435 \u043F\u043E\u043A\u0440\u044B\u0442\u0438\u0435 +18 %."
+    Price: 2500
+    Prefab: {fileID: 0}
+    Classes: 0400000005000000060000000000000009000000i
+  Palette:
+  - Name: "\u041E\u0433\u043D\u0435\u043D\u043D\u044B\u0439"
+    Color: {r: 0.8862745, g: 0.2509804, b: 0.12156863, a: 1}
+  - Name: "\u0412\u0438\u0448\u043D\u044F"
+    Color: {r: 0.61960787, g: 0.0627451, b: 0.1882353, a: 1}
+  - Name: "\u041A\u043E\u0440\u0430\u043B\u043B"
+    Color: {r: 1, g: 0.43529412, b: 0.38039216, a: 1}
+  - Name: "\u041E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0439 \xAB\u0420\u0430\u043D\u0434\u043E\u043C\xBB"
+    Color: {r: 1, g: 0.41568628, b: 0.16470589, a: 1}
+  - Name: "\u042F\u043D\u0442\u0430\u0440\u044C"
+    Color: {r: 1, g: 0.69803923, b: 0.101960786, a: 1}
+  - Name: "\u041F\u043E\u0434\u0441\u043E\u043B\u043D\u0443\u0445"
+    Color: {r: 1, g: 0.84705883, b: 0.2901961, a: 1}
+  - Name: "\u041B\u0430\u0439\u043C"
+    Color: {r: 0.6509804, g: 0.8862745, b: 0.22745098, a: 1}
+  - Name: "\u0418\u0437\u0443\u043C\u0440\u0443\u0434"
+    Color: {r: 0.06666667, g: 0.5176471, b: 0.35686275, a: 1}
+  - Name: "\u041C\u044F\u0442\u0430"
+    Color: {r: 0.1764706, g: 0.83137256, b: 0.627451, a: 1}
+  - Name: "\u0411\u0438\u0440\u044E\u0437\u0430"
+    Color: {r: 0.12156863, g: 0.78039217, b: 0.75686276, a: 1}
+  - Name: "\u041D\u0435\u0431\u0435\u0441\u043D\u044B\u0439"
+    Color: {r: 0.2901961, g: 0.6392157, b: 0.9098039, a: 1}
+  - Name: "\u041A\u043E\u0431\u0430\u043B\u044C\u0442"
+    Color: {r: 0.12156863, g: 0.30980393, b: 0.84705883, a: 1}
+  - Name: "\u041D\u043E\u0447\u043D\u0430\u044F \u0441\u0438\u043D\u044C"
+    Color: {r: 0.078431375, g: 0.13725491, b: 0.3019608, a: 1}
+  - Name: "\u0424\u0438\u0430\u043B\u043A\u0430"
+    Color: {r: 0.47843137, g: 0.30980393, b: 0.8784314, a: 1}
+  - Name: "\u041F\u0443\u0440\u043F\u0443\u0440"
+    Color: {r: 0.6901961, g: 0.15686275, b: 0.49803922, a: 1}
+  - Name: "\u0420\u043E\u0437\u043E\u0432\u044B\u0439 \u043D\u0435\u043E\u043D"
+    Color: {r: 1, g: 0.30980393, b: 0.627451, a: 1}
+  - Name: "\u0421\u043D\u0435\u0436\u043D\u044B\u0439"
+    Color: {r: 0.9490196, g: 0.9411765, b: 0.9098039, a: 1}
+  - Name: "\u0421\u0435\u0440\u0435\u0431\u0440\u043E"
+    Color: {r: 0.7254902, g: 0.74509805, b: 0.7764706, a: 1}
+  - Name: "\u0422\u0438\u0442\u0430\u043D"
+    Color: {r: 0.49019608, g: 0.5137255, b: 0.54901963, a: 1}
+  - Name: "\u0413\u0440\u0430\u0444\u0438\u0442"
+    Color: {r: 0.22745098, g: 0.24313726, b: 0.27058825, a: 1}
+  - Name: "\u0427\u0451\u0440\u043D\u044B\u0439"
+    Color: {r: 0.05490196, g: 0.05882353, b: 0.06666667, a: 1}
+  - Name: "\u041F\u0435\u0441\u043E\u043A"
+    Color: {r: 0.8039216, g: 0.7058824, b: 0.5411765, a: 1}
+  - Name: "\u0425\u0430\u043A\u0438"
+    Color: {r: 0.36862746, g: 0.41960785, b: 0.22745098, a: 1}
+  - Name: "\u0428\u043E\u043A\u043E\u043B\u0430\u0434"
+    Color: {r: 0.2901961, g: 0.17254902, b: 0.11764706, a: 1}

@@ -9,9 +9,11 @@ namespace RandomCar.EditorTools
     /// в игре ничего не строится.
     public sealed class TrackMeshBuilder
     {
-        public const float HalfWidth = 6f;
+        /// Ширина дороги по умолчанию (карты, собранные до бета-версии: «Пустыня», полигон).
+        public const float DefaultHalfWidth = 6f;
         public const float KerbWidth = 1.15f;
-        public const float RailBase = 11f;
+        /// Отбойник от края дороги (при ширине по умолчанию — 11 м от оси, как было).
+        const float RailFromEdge = 5f;
         public const float GravelWidth = 10f;
         public const float WallZoneBefore = 75f;
         public const float WallZoneAfter = 95f;
@@ -26,9 +28,16 @@ namespace RandomCar.EditorTools
         readonly float[] gravelLeft;
         readonly float[] gravelRight;
 
-        public TrackMeshBuilder(TrackPath trackPath)
+        /// Половина ширины дороги, м: разметка, бордюры, гравий и отбойники строятся от неё.
+        public float HalfWidth { get; }
+
+        /// Расстояние от оси до отбойника без гравия, м.
+        public float RailBase => HalfWidth + RailFromEdge;
+
+        public TrackMeshBuilder(TrackPath trackPath, float halfWidth = DefaultHalfWidth)
         {
             path = trackPath;
+            HalfWidth = halfWidth;
             n = path.Count;
             curvature = new float[n];
             for (int i = 0; i < n; i++) curvature[i] = path.CurvatureAt(i, 4);
@@ -320,7 +329,7 @@ namespace RandomCar.EditorTools
         }
 
         /// Накопитель меша с несколькими подсетками.
-        sealed class MeshBuilder
+        internal sealed class MeshBuilder
         {
             readonly string name;
             readonly List<Vector3> vertices = new List<Vector3>();
@@ -348,6 +357,15 @@ namespace RandomCar.EditorTools
             {
                 Tri(sub, a, b, c, Vector3.up);
                 Tri(sub, a, c, d, Vector3.up);
+            }
+
+            /// Четырёхугольник по индексам с заданной лицевой стороной (нормали вершин — по ней).
+            public void QuadFacingIndices(int sub, int a, int b, int c, int d, Vector3 facing)
+            {
+                Vector3 n = facing.normalized;
+                foreach (int i in new[] { a, b, c, d }) normals[i] = n;
+                Tri(sub, a, b, c, n);
+                Tri(sub, a, c, d, n);
             }
 
             public void QuadUpPoints(int sub, Vector3 a, Vector3 b, Vector3 c, Vector3 d, float worldUv = 0f)
