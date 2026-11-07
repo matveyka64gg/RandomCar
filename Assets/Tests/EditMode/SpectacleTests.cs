@@ -13,7 +13,7 @@ namespace RandomCar.Tests
     public sealed class SpectacleTests
     {
         const string ClipPath = "Assets/Art/Audio/Sfx/Events/el-drifto.mp3";
-        /// SHA-256 файла, который прислал пользователь (D:\el-drifto.mp3): запись не заменена и не изменена.
+        /// SHA-256 файла, который прислал пользователь (исходная запись el-drifto.mp3): запись не заменена и не изменена.
         const string OriginalSha256 = "6d0fcd160262f447066ecec214a33b14e8708bda42eaa39ee74f1d021fd93b59";
 
         static EventDefinition Def(string id) => EventSettings.DefaultEvents().FirstOrDefault(d => d.Id == id);

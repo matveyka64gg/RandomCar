@@ -79,8 +79,8 @@ namespace RandomCar.UI
             var current = player != null ? player.Current : null;
             if (player == null || !player.HasTracks || current == null)
             {
-                title.text = "Музыка не найдена";
-                artist.text = player != null && player.PlaylistKey != MusicLibrary.MainPlaylist ? "В плейлисте карты нет треков" : "Нет музыкальных треков";
+                title.text = "Музыки пока нет";
+                artist.text = "Добавьте свою: «Моя музыка»";
                 Root.AddToClassList("empty");
             }
             else

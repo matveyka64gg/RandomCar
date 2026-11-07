@@ -9,11 +9,14 @@
 import argparse
 import base64
 import json
+import os
 import subprocess
 import sys
 
-UNITY = r"C:\Users\matvey\AppData\Local\Unity\bin\unity.exe"
-PROJECT = r"C:\Users\matvey\Desktop\RandomCar\RandomCar"
+# Unity CLI: из PATH (по умолчанию) или путь из переменной окружения UNITY_CLI.
+UNITY = os.environ.get("UNITY_CLI", "unity")
+# Корень проекта — на два уровня выше этого файла (Tools/Unity/shot.py).
+PROJECT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 
 
 def unity(*args, timeout=180):

@@ -27,8 +27,8 @@ MonoBehaviour:
     Prefab: {fileID: 5181601189051518698, guid: 773b8a45f85ba33409f7f74d60ddf856, type: 3}
     Spec: {fileID: 11400000, guid: 90b371d46af6c024198871e00c7e37ae, type: 2}
     Class: 2
-    Price: 0
-    Unlock: 
+    Price: 16000
+    Unlock:
     DefaultColor: {r: 0.12156863, g: 0.30980393, b: 0.84705883, a: 1}
     DefaultFinish: 1
   - Key: Pchelka
@@ -36,8 +36,8 @@ MonoBehaviour:
     Prefab: {fileID: 3755949265424819237, guid: c9f89f1ce33b55346bf395ef57c3db64, type: 3}
     Spec: {fileID: 11400000, guid: a489d13b3ee5155419f2aaf1bdfb8c83, type: 2}
     Class: 4
-    Price: 0
-    Unlock: 
+    Price: 12000
+    Unlock:
     DefaultColor: {r: 1, g: 0.7607843, b: 0.101960786, a: 1}
     DefaultFinish: 1
   - Key: Myata
@@ -45,8 +45,8 @@ MonoBehaviour:
     Prefab: {fileID: 6909824129586185799, guid: 2772d36b45820fd4db159f7f00da1f88, type: 3}
     Spec: {fileID: 11400000, guid: 2a490e24aa48a9b47bfb84533d9ec404, type: 2}
     Class: 0
-    Price: 0
-    Unlock: 
+    Price: 9000
+    Unlock:
     DefaultColor: {r: 0.1764706, g: 0.83137256, b: 0.627451, a: 1}
     DefaultFinish: 1
   - Key: Bastion

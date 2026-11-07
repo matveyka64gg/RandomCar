@@ -116,3 +116,11 @@ InitTestScene*.unity*
 # папка «положи файл» для запуска из редактора, в сборках она рядом с RandomCar.exe)
 /[Ss]creenshots/
 /UserContent/
+
+# Публичный релиз: локальные сборки для загрузки в Release и личные файлы
+/Release/
+/.claude/
+/.idea/
+/.vscode/
+/[Aa]ssets/Art/Audio/MusicArchive~/
+*.zip

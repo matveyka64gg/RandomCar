@@ -26,13 +26,13 @@ namespace RandomCar.EditorTools
             }
         }
 
-        /// Порядок — порядок в гараже. Цена 0 — машина доступна сразу.
+        /// Порядок — порядок в гараже. Цена 0 — машина доступна сразу (стартовая: только «Искра»).
         public static readonly Entry[] Cars =
         {
             new Entry("Iskra", "Искра", CarClass.Sport, 0, "", "#E2401F"),
-            new Entry("Kometa", "Комета", CarClass.Sedan, 0, "", "#1F4FD8"),
-            new Entry("Pchelka", "Пчёлка", CarClass.Rally, 0, "", "#FFC21A"),
-            new Entry("Myata", "Мята", CarClass.Compact, 0, "", "#2DD4A0"),
+            new Entry("Kometa", "Комета", CarClass.Sedan, 16000, "", "#1F4FD8"),
+            new Entry("Pchelka", "Пчёлка", CarClass.Rally, 12000, "", "#FFC21A"),
+            new Entry("Myata", "Мята", CarClass.Compact, 9000, "", "#2DD4A0"),
             new Entry("Bastion", "Бастион", CarClass.LuxurySuv, 42000, "", "#1A1C20"),
             new Entry("Bizon", "Бизон", CarClass.Muscle, 30000, "", "#F2B21A"),
             new Entry("Taiga", "Тайга", CarClass.Offroad, 36000, "", "#5E6B3A"),

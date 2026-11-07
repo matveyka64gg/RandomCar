@@ -13,9 +13,10 @@ import bmesh
 import bpy
 from mathutils import Matrix, Vector
 
-PROJECT = r"C:\Users\matvey\Desktop\RandomCar\RandomCar"
+# Корень проекта — на два уровня выше этого файла (Tools/Blender/rc_lib.py).
+PROJECT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 ART = os.path.join(PROJECT, "Assets", "Art", "Models")
-PREVIEW = r"C:\Users\matvey\AppData\Local\Temp\randomcar\blender"
+PREVIEW = os.path.join(os.environ.get("TEMP") or os.environ.get("TMPDIR") or "/tmp", "randomcar", "blender")
 
 
 def C(x, y, z):

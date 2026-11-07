@@ -11,7 +11,8 @@ namespace RandomCar.Save
     /// краска/диск/спойлер по индексам — переводится при чтении). Деньги только игровые, без реальных платежей.
     public static class GarageStore
     {
-        public const int StartCredits = 20000;
+        /// Стартовый капитал новой игры: ноль. Деньги появляются только за гонки (см. Reward).
+        public const int StartCredits = 0;
         public const int MaxBuilds = 6;
 
         [Serializable]
